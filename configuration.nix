@@ -86,4 +86,8 @@
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "16.09";
+
+  # Copy this configuration file to
+  # /var/run/current-system/configuration.nix
+  system.copySystemConfiguration = true;
 }
