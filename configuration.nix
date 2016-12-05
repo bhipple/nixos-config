@@ -1,5 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
+# Edit this configuration file to define what should be installed on your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
@@ -21,6 +20,9 @@
 
   # networking.hostName = "nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+
+  hardware.opengl.driSupport32Bit = true;
+  hardware.pulseaudio.support32Bit = true;
 
   # Select internationalisation properties.
   i18n = {
@@ -58,9 +60,17 @@
       # Enable XMonad Configuration extras
       windowManager.xmonad.enable = true;
       windowManager.xmonad.enableContribAndExtras = true;
-      windowManager.default = "xmonad"; 
+      windowManager.default = "xmonad";
       windowManager.xmonad.extraPackages = haskellPackages: [
         haskellPackages.xmobar
+        #haskellPackages.xmonad
+        #haskellPackages.xmpipe
+        #haskellPackages.xmonad-windownames
+        #haskellPackages.xmonad-contrib
+        #haskellPackages.xmonad-extras
+        #haskellPackages.xmonad-utils
+        #haskellPackages.xmonad-entryhelper
+        #haskellPackages.xmonad-eval
       ];
 
       #desktopManager.default = "none";
