@@ -41,6 +41,7 @@
   environment.systemPackages = with pkgs; [
     wget
     xlibs.xmessage
+    amdappsdkFull
     #haskellPackages.haskellPlatform.ghc
     #haskellPackages.xmobar
     #haskellPackages.xmonad
