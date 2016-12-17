@@ -50,6 +50,9 @@
       enable = true;
       layout = "us";
 
+      # Proprietary AMD Drivers
+      videoDrivers = [ "ati_unfree" ];
+
       # Override the caps-lock key with the compose key
       xkbOptions = "compose:caps";
 
