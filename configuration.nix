@@ -74,9 +74,12 @@
       desktopManager.kde4.enable = true;
     };
 
-  # Enable the KDE Desktop Environment.
-  services.xserver.displayManager.kdm.enable = true;
-  services.xserver.desktopManager.kde4.enable = true;
+    openssh = {
+      enable = true;
+      permitRootLogin = "no";
+      passwordAuthentication = false;
+    };
+  };
 
   programs.zsh.enable = true;
   users.defaultUserShell = "/run/current-system/sw/bin/zsh";
