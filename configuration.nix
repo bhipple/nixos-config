@@ -4,6 +4,8 @@
 { config, pkgs, ... }:
 
 {
+  nixpkgs.config.allowUnfree = true;
+
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -12,14 +14,9 @@
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
-  # boot.loader.grub.efiSupport = true;
-  # boot.loader.grub.efiInstallAsRemovable = true;
-  # boot.loader.efi.efiSysMountPoint = "/boot/efi";
-  # Define on which hard drive you want to install Grub.
-  boot.loader.grub.device = "/dev/sdc"; # or "nodev" for efi only
+  boot.loader.grub.device = "/dev/sdc";
 
-  # networking.hostName = "nixos"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.hostName = "brh.desktop";
 
   hardware.opengl.driSupport32Bit = true;
   hardware.pulseaudio.support32Bit = true;
@@ -33,8 +30,6 @@
 
   # Set your time zone.
   time.timeZone = "America/New_York";
-
-  nixpkgs.config.allowUnfree = true;
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
@@ -74,10 +69,10 @@
         #haskellPackages.xmonad-eval
       ];
 
-      #desktopManager.default = "none";
-      #desktopManager.xterm.enable = false;
+      # Enable the KDE Desktop Environment.
+      displayManager.kdm.enable = true;
+      desktopManager.kde4.enable = true;
     };
-  };
 
   # Enable the KDE Desktop Environment.
   services.xserver.displayManager.kdm.enable = true;
@@ -95,7 +90,6 @@
     shell = "/run/current-system/sw/bin/zsh";
     uid = 1000;
   };
-
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "16.09";
