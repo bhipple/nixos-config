@@ -37,11 +37,12 @@
     wget
     xlibs.xmessage
     amdappsdkFull
-    #haskellPackages.haskellPlatform.ghc
-    #haskellPackages.xmobar
-    #haskellPackages.xmonad
-    #haskellPackages.xmonadContrib
-    #haskellPackages.xmonadExtras
+
+    (haskellPackages.ghcWithPackages (ps: with ps;
+      [ xmonad
+        xmobar
+        xmonad-contrib
+        xmonad-extras ]))
   ];
 
   # List services that you want to enable:
