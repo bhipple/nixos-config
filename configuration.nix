@@ -52,6 +52,14 @@
       enable = true;
       layout = "us";
 
+      # Sets the center monitor to be the primary.
+      # Will move the login screen and xmobar onto the center monitor.
+      # Waiting on https://github.com/NixOS/nixpkgs/pull/15353 to be merged
+      # xrandrHeads = [ "DisplayPort-0"
+      #                 { output = "HDMI-0"; primary = true; monitorConfig = ""; }
+      #                 "DVI-0"
+      #               ];
+
       # Proprietary AMD Drivers
       #videoDrivers = [ "ati_unfree" ];
 
@@ -60,19 +68,13 @@
       xkbOptions = "caps:ctrl_modifier";
 
       # Enable XMonad Configuration extras
+      windowManager.default = "xmonad";
       windowManager.xmonad.enable = true;
       windowManager.xmonad.enableContribAndExtras = true;
-      windowManager.default = "xmonad";
       windowManager.xmonad.extraPackages = haskellPackages: [
         haskellPackages.xmobar
-        #haskellPackages.xmonad
-        #haskellPackages.xmpipe
-        #haskellPackages.xmonad-windownames
-        #haskellPackages.xmonad-contrib
-        #haskellPackages.xmonad-extras
-        #haskellPackages.xmonad-utils
-        #haskellPackages.xmonad-entryhelper
-        #haskellPackages.xmonad-eval
+        haskellPackages.xmonad-contrib
+        haskellPackages.xmonad-extras
       ];
 
       # Enable the KDE Desktop Environment.
