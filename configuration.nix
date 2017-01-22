@@ -37,6 +37,7 @@
     wget
     xlibs.xmessage
     amdappsdkFull
+    dmenu
 
     (haskellPackages.ghcWithPackages (ps: with ps;
       [ xmonad
