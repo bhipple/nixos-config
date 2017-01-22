@@ -54,7 +54,8 @@
       #videoDrivers = [ "ati_unfree" ];
 
       # Override the caps-lock key with the compose key
-      xkbOptions = "compose:caps";
+      # See /etc/X11/xkb/rules/evdev.lst for more options
+      xkbOptions = "caps:ctrl_modifier";
 
       # Enable XMonad Configuration extras
       windowManager.xmonad.enable = true;
