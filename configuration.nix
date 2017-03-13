@@ -1,4 +1,5 @@
-# Edit this configuration file to define what should be installed on your system.  Help is available in the configuration.nix(5) man page
+# Edit this configuration file to define what should be installed on
+# your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
@@ -11,12 +12,11 @@
       ./hardware-configuration.nix
     ];
 
-  # Use the GRUB 2 boot loader.
-  boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
-  boot.loader.grub.device = "/dev/sdc";
+  # Use the systemd-boot EFI boot loader.
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "brh.desktop";
+  networking.hostName = "brh.laptop";
 
   hardware.opengl.driSupport32Bit = true;
   hardware.pulseaudio.support32Bit = true;
@@ -54,17 +54,6 @@
     xserver = {
       enable = true;
       layout = "us";
-
-      # Sets the center monitor to be the primary.
-      # Will move the login screen and xmobar onto the center monitor.
-      # Waiting on https://github.com/NixOS/nixpkgs/pull/15353 to be merged
-      # xrandrHeads = [ "DisplayPort-0"
-      #                 { output = "HDMI-0"; primary = true; monitorConfig = ""; }
-      #                 "DVI-0"
-      #               ];
-
-      # Proprietary AMD Drivers
-      #videoDrivers = [ "ati_unfree" ];
 
       # Override the caps-lock key with the compose key
       # See /etc/X11/xkb/rules/evdev.lst for more options
