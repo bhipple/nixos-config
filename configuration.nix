@@ -17,6 +17,7 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   networking.hostName = "brh.laptop";
+  networking.networkmanager.enable = true;
 
   hardware.opengl.driSupport32Bit = true;
   hardware.pulseaudio.support32Bit = true;
@@ -41,6 +42,7 @@
     xlibs.xmessage
     amdappsdkFull
     dmenu
+    gitAndTools.hub
 
     (haskellPackages.ghcWithPackages (ps: with ps;
       [ xmonad
