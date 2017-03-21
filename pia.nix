@@ -3,7 +3,7 @@
 
 { services.openvpn = {
   servers.pia = {
-    autoStart = false;
+    autoStart = true;
     config = ''
       client
       dev tun
