@@ -94,7 +94,7 @@
     isNormalUser = true;
     home = "/home/bhipple";
     description = "Benjamin Hipple";
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "docker" "networkmanager" "wheel" ];
     shell = "/run/current-system/sw/bin/zsh";
     uid = 1000;
   };
