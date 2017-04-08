@@ -73,10 +73,6 @@
         haskellPackages.xmonad-contrib
         haskellPackages.xmonad-extras
       ];
-
-      # Enable the KDE Desktop Environment.
-      displayManager.kdm.enable = true;
-      desktopManager.kde4.enable = true;
     };
 
     openssh = {
