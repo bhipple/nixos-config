@@ -85,6 +85,15 @@
         haskellPackages.xmonad-contrib
         haskellPackages.xmonad-extras
       ];
+
+      desktopManager = {
+        plasma5.enable = false;
+        xterm.enable = false;
+        xfce.enable = false;
+
+        # Just use xmonad
+        default = "none";
+      };
     };
 
     openssh = {
@@ -108,7 +117,7 @@
   };
 
   # The NixOS release to be compatible with for stateful data such as databases.
-  system.stateVersion = "16.09";
+  system.stateVersion = "17.03";
 
   # Copy this configuration file to
   # /var/run/current-system/configuration.nix
