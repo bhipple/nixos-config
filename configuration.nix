@@ -87,9 +87,9 @@
       ];
 
       desktopManager = {
-        plasma5.enable = false;
-        xterm.enable = false;
-        xfce.enable = false;
+        plasma5.enable = true;
+        xterm.enable = true;
+        xfce.enable = true;
 
         # Just use xmonad
         default = "none";
