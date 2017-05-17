@@ -12,12 +12,23 @@
       ./hardware-configuration.nix
 
       # VPN
-      ./pia.nix
+      #./pia.nix
     ];
 
-  # Use the systemd-boot EFI boot loader.
-  boot.loader.systemd-boot.enable = true;
+  boot.kernelParams = [ "intel_pstate=no_hwp" ];
+
+  boot.loader.grub.enable = true;
+  boot.loader.grub.version = 2;
+  boot.loader.grub.device = "nodev";
+  boot.loader.grub.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
+
+  boot.initrd.luks.devices = [{
+    name = "root";
+    device = "/dev/sda2";
+    preLVM = true;
+    allowDiscards = true;
+  }];
 
   networking.hostName = "brh.laptop";
   networking.networkmanager.enable = true;
@@ -40,57 +51,57 @@
 
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages = with pkgs; [
-    wget
-    xlibs.xmessage
-    amdappsdkFull
-    dmenu
-    gitAndTools.hub
-
-    (haskellPackages.ghcWithPackages (ps: with ps;
-      [ xmonad
-        xmobar
-        xmonad-contrib
-        xmonad-extras ]))
-  ];
-
-  # List services that you want to enable:
-  services = {
-    xserver = {
-      enable = true;
-      layout = "us";
-
-      # Override the caps-lock key with the compose key
-      # See /etc/X11/xkb/rules/evdev.lst for more options
-      xkbOptions = "caps:ctrl_modifier";
-
-      # Enable XMonad Configuration extras
-      windowManager.default = "xmonad";
-      windowManager.xmonad.enable = true;
-      windowManager.xmonad.enableContribAndExtras = true;
-      windowManager.xmonad.extraPackages = haskellPackages: [
-        haskellPackages.xmobar
-        haskellPackages.xmonad-contrib
-        haskellPackages.xmonad-extras
-      ];
-
-      desktopManager = {
-        plasma5.enable = false;
-        xterm.enable = false;
-        xfce.enable = false;
-
-        # Just use xmonad
-        default = "none";
-      };
-    };
-
-    openssh = {
-      enable = true;
-      permitRootLogin = "no";
-      passwordAuthentication = false;
-    };
-  };
-
+##  environment.systemPackages = with pkgs; [
+#    wget
+#    xlibs.xmessage
+#    amdappsdkFull
+#    dmenu
+#    gitAndTools.hub
+#
+#    (haskellPackages.ghcWithPackages (ps: with ps;
+#      [ xmonad
+#        xmobar
+#        xmonad-contrib
+#        xmonad-extras ]))
+#  ];
+#
+#  # List services that you want to enable:
+#  services = {
+#    xserver = {
+#      enable = true;
+#      layout = "us";
+#
+#      # Override the caps-lock key with the compose key
+#      # See /etc/X11/xkb/rules/evdev.lst for more options
+#      xkbOptions = "caps:ctrl_modifier";
+#
+#      # Enable XMonad Configuration extras
+#      windowManager.default = "xmonad";
+#      windowManager.xmonad.enable = true;
+#      windowManager.xmonad.enableContribAndExtras = true;
+#      windowManager.xmonad.extraPackages = haskellPackages: [
+#        haskellPackages.xmobar
+#        haskellPackages.xmonad-contrib
+#        haskellPackages.xmonad-extras
+#      ];
+#
+#      desktopManager = {
+#        plasma5.enable = false;
+#        xterm.enable = false;
+#        xfce.enable = false;
+#
+#        # Just use xmonad
+#        default = "none";
+#      };
+#    };
+#
+#    openssh = {
+#      enable = true;
+#      permitRootLogin = "no";
+#      passwordAuthentication = false;
+#    };
+#  };
+#
   programs.zsh.enable = true;
   users.defaultUserShell = "/run/current-system/sw/bin/zsh";
 
