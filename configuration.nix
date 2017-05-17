@@ -103,7 +103,11 @@
     };
   };
 
-  programs.zsh.enable = true;
+  programs = {
+    adb.enable = true;
+    zsh.enable = true;
+  };
+
   users.defaultUserShell = "/run/current-system/sw/bin/zsh";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -111,7 +115,7 @@
     isNormalUser = true;
     home = "/home/bhipple";
     description = "Benjamin Hipple";
-    extraGroups = [ "docker" "networkmanager" "wheel" ];
+    extraGroups = [ "adbusers" "docker" "networkmanager" "wheel" ];
     shell = "/run/current-system/sw/bin/zsh";
     uid = 1000;
   };
