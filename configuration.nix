@@ -87,7 +87,7 @@
       ];
 
       desktopManager = {
-        plasma5.enable = true;
+        plasma5.enable = false;
         xterm.enable = true;
         xfce.enable = true;
 
