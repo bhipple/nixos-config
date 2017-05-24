@@ -73,8 +73,7 @@
       #                 "DVI-0"
       #               ];
 
-      # Proprietary AMD Drivers
-      #videoDrivers = [ "ati_unfree" ];
+      videoDrivers = [ "ati" ];
 
       # Override the caps-lock key with the compose key
       # See /etc/X11/xkb/rules/evdev.lst for more options
