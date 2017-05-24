@@ -73,7 +73,8 @@
       #                 "DVI-0"
       #               ];
 
-      videoDrivers = [ "ati" ];
+      # Use proprietary AMD drivers
+      videoDrivers = [ "amdgpu-pro" ];
 
       # Override the caps-lock key with the compose key
       # See /etc/X11/xkb/rules/evdev.lst for more options
