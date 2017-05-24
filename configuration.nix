@@ -23,8 +23,12 @@
   networking.hostName = "brh.desktop";
   networking.networkmanager.enable = true;
 
-  hardware.opengl.driSupport32Bit = true;
-  hardware.pulseaudio.support32Bit = true;
+  hardware = {
+    opengl.enable = true;
+    opengl.driSupport = true;
+    opengl.driSupport32Bit = true;
+    pulseaudio.support32Bit = true;
+  };
 
   # Select internationalisation properties.
   i18n = {
