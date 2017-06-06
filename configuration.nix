@@ -54,11 +54,11 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
-    wget
-    xlibs.xmessage
     amdappsdkFull
     dmenu
     gitAndTools.hub
+    wget
+    xlibs.xmessage
 
     (haskellPackages.ghcWithPackages (ps: with ps;
       [ xmonad
@@ -113,6 +113,10 @@
       permitRootLogin = "no";
       passwordAuthentication = false;
     };
+
+    ipfs = {
+      enable = true;
+    };
   };
 
   programs = {
@@ -127,7 +131,7 @@
     isNormalUser = true;
     home = "/home/bhipple";
     description = "Benjamin Hipple";
-    extraGroups = [ "adbusers" "docker" "networkmanager" "wheel" ];
+    extraGroups = [ "adbusers" "bhipple" "docker" "ipfs" "networkmanager" "wheel" ];
     shell = "/run/current-system/sw/bin/zsh";
     uid = 1000;
   };
