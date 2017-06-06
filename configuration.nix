@@ -27,7 +27,15 @@
     opengl.enable = true;
     opengl.driSupport = true;
     opengl.driSupport32Bit = true;
-    pulseaudio.support32Bit = true;
+    pulseaudio = {
+      enable = true;
+      support32Bit = true;
+      systemWide = false;
+      # zeroconf = {
+      #   discovery.enable = true;
+      #   publish.enable = true;
+      # };
+    };
   };
 
   # Select internationalisation properties.
