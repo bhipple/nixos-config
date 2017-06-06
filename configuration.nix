@@ -12,7 +12,7 @@
       ./hardware-configuration.nix
 
       # VPN
-      ./pia.nix
+      ./private-internet-access.nix
     ];
 
   # Use the GRUB 2 boot loader.
