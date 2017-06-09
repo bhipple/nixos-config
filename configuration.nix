@@ -17,16 +17,8 @@
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
-  boot.loader.grub.device = "/dev/sdb1";
+  boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.efiSupport = false;
-
-  boot.initrd.luks.devices = [{
-    name = "cryptroot";
-    device = "/dev/sdb2";
-    preLVM = true;
-    allowDiscards = true;
-  }];
 
   networking.hostName = "brh.desktop";
   networking.networkmanager.enable = true;
