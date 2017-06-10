@@ -67,6 +67,8 @@
         xmonad-extras ]))
   ];
 
+  environment.variables = { IPFS_PATH = "/var/lib/ipfs/.ipfs"; };
+
   # List services that you want to enable:
   services = {
     xserver = {
