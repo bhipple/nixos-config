@@ -46,11 +46,9 @@
   # Enable Docker Daemon
   virtualisation.docker.enable = true;
 
-  # Set your time zone.
   time.timeZone = "America/New_York";
 
-  # List packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep wget
+  # System profile packages
   environment.systemPackages = with pkgs; [
     wget
     xlibs.xmessage
@@ -65,8 +63,18 @@
         xmonad-extras ]))
   ];
 
-  # List services that you want to enable:
   services = {
+    cron = {
+      enable = true;
+      systemCronJobs = [
+        "0 * * * *  bhipple  sync-repos > /tmp/bhipple-sync-repos"
+      ];
+    };
+
+    postfix = {
+      enable = true;
+    };
+
     xserver = {
       enable = true;
       layout = "us";
@@ -102,7 +110,11 @@
     };
   };
 
-  programs.zsh.enable = true;
+  programs = {
+    zsh.enable = true;
+    slock.enable = true;
+  };
+
   users.defaultUserShell = "/run/current-system/sw/bin/zsh";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
