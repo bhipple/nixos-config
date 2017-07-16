@@ -18,6 +18,7 @@
   environment.systemPackages = with pkgs; [
     dmenu
     gitAndTools.hub
+    gitAndTools.gitFull
     wget
     xlibs.xmessage
 
@@ -49,7 +50,7 @@
     cron = {
       enable = true;
       systemCronJobs = [
-        "0 * * * *  bhipple  /home/bhipple/bin/sync-repos > /tmp/bhipple-sync-repos"
+        "* * * * *  bhipple  /home/bhipple/bin/sync-repos > /tmp/bhipple-sync-repos 2&>1"
       ];
     };
 
