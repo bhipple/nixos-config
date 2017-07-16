@@ -11,10 +11,10 @@
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
 
-      ./base.nix
+      ../base.nix
 
       # VPN
-      ./private-internet-access.nix
+      ../private-internet-access.nix
     ];
 
   boot.kernelParams = [ "intel_pstate=no_hwp" ];
