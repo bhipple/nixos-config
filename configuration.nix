@@ -67,7 +67,7 @@
     cron = {
       enable = true;
       systemCronJobs = [
-        "0 * * * *  bhipple  sync-repos > /tmp/bhipple-sync-repos"
+        "0 * * * *  bhipple  /home/bhipple/bin/sync-repos > /tmp/bhipple-sync-repos"
       ];
     };
 
@@ -84,14 +84,18 @@
       xkbOptions = "caps:ctrl_modifier";
 
       # Enable XMonad Configuration extras
-      windowManager.default = "xmonad";
-      windowManager.xmonad.enable = true;
-      windowManager.xmonad.enableContribAndExtras = true;
-      windowManager.xmonad.extraPackages = haskellPackages: [
-        haskellPackages.xmobar
-        haskellPackages.xmonad-contrib
-        haskellPackages.xmonad-extras
-      ];
+      windowManager = {
+        default = "xmonad";
+        xmonad = {
+          enable = true;
+          enableContribAndExtras = true;
+          extraPackages = haskellPackages: [
+            haskellPackages.xmobar
+            haskellPackages.xmonad-contrib
+            haskellPackages.xmonad-extras
+          ];
+        };
+      };
 
       desktopManager = {
         plasma5.enable = false;
@@ -112,7 +116,7 @@
 
   programs = {
     zsh.enable = true;
-    slock.enable = true;
+    #slock.enable = true;
   };
 
   users.defaultUserShell = "/run/current-system/sw/bin/zsh";
