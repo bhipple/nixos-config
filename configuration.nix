@@ -12,15 +12,15 @@
       ./hardware-configuration.nix
 
       # VPN
-      ./private-internet-access.nix
+      #./private-internet-access.nix
     ];
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sdb";
+  boot.loader.grub.device = "/dev/sdd";
   boot.loader.grub.efiSupport = false;
 
-  networking.hostName = "brh.desktop";
+  networking.hostName = "smilodon";
   networking.networkmanager.enable = true;
 
   hardware = {
@@ -54,7 +54,6 @@
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
-    amdappsdkFull
     dmenu
     gitAndTools.hub
     wget
@@ -75,19 +74,6 @@
       enable = true;
       layout = "us";
 
-      # Sets the center monitor to be the primary.
-      # Will move the login screen and xmobar onto the center monitor.
-      # Waiting on https://github.com/NixOS/nixpkgs/pull/15353 to be merged
-      # xrandrHeads = [ "DisplayPort-0"
-      #                 { output = "HDMI-0"; primary = true; monitorConfig = ""; }
-      #                 "DVI-0"
-      #               ];
-
-      # Use proprietary AMD drivers
-      videoDrivers = [ "amdgpu-pro" ];
-
-      # Override the caps-lock key with the compose key
-      # See /etc/X11/xkb/rules/evdev.lst for more options
       xkbOptions = "caps:ctrl_modifier";
 
       # Enable XMonad Configuration extras
@@ -104,9 +90,7 @@
         plasma5.enable = false;
         xterm.enable = true;
         xfce.enable = true;
-
-        # Just use xmonad
-        default = "none";
+        default = "xfce";
       };
     };
 
@@ -131,11 +115,14 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.extraUsers.bhipple = {
     isNormalUser = true;
-    home = "/home/bhipple";
     description = "Benjamin Hipple";
     extraGroups = [ "adbusers" "bhipple" "docker" "ipfs" "networkmanager" "wheel" ];
-    shell = "/run/current-system/sw/bin/zsh";
-    uid = 1000;
+  };
+
+  users.extraUsers.smilodon = {
+    isNormalUser = true;
+    description = "Smilodon";
+    extraGroups = [ "adbusers" "smilodon" "docker" "ipfs" "networkmanager" "wheel" ];
   };
 
   # The NixOS release to be compatible with for stateful data such as databases.
