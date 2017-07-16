@@ -51,8 +51,7 @@
   # Set your time zone.
   time.timeZone = "America/New_York";
 
-  # List packages installed in system profile. To search by name, run:
-  # $ nix-env -qaP | grep wget
+  # System profile packages
   environment.systemPackages = with pkgs; [
     amdappsdkFull
     dmenu
@@ -67,10 +66,18 @@
         xmonad-extras ]))
   ];
 
-  environment.variables = { IPFS_PATH = "/var/lib/ipfs/.ipfs"; };
-
-  # List services that you want to enable:
   services = {
+    cron = {
+      enable = true;
+      systemCronJobs = [
+        "0 * * * *  bhipple  /home/bhipple/bin/sync-repos > /tmp/bhipple-sync-repos"
+      ];
+    };
+
+    postfix = {
+      enable = true;
+    };
+
     xserver = {
       enable = true;
       layout = "us";
@@ -91,14 +98,18 @@
       xkbOptions = "caps:ctrl_modifier";
 
       # Enable XMonad Configuration extras
-      windowManager.default = "xmonad";
-      windowManager.xmonad.enable = true;
-      windowManager.xmonad.enableContribAndExtras = true;
-      windowManager.xmonad.extraPackages = haskellPackages: [
-        haskellPackages.xmobar
-        haskellPackages.xmonad-contrib
-        haskellPackages.xmonad-extras
-      ];
+      windowManager = {
+        default = "xmonad";
+        xmonad = {
+          enable = true;
+          enableContribAndExtras = true;
+          extraPackages = haskellPackages: [
+            haskellPackages.xmobar
+            haskellPackages.xmonad-contrib
+            haskellPackages.xmonad-extras
+          ];
+        };
+      };
 
       desktopManager = {
         plasma5.enable = false;
@@ -131,11 +142,8 @@
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.extraUsers.bhipple = {
     isNormalUser = true;
-    home = "/home/bhipple";
     description = "Benjamin Hipple";
     extraGroups = [ "adbusers" "bhipple" "docker" "ipfs" "networkmanager" "wheel" ];
-    shell = "/run/current-system/sw/bin/zsh";
-    uid = 1000;
   };
 
   # The NixOS release to be compatible with for stateful data such as databases.
