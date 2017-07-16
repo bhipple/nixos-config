@@ -11,7 +11,6 @@
   # Enable Docker Daemon
   virtualisation.docker.enable = true;
 
-  # Set your time zone.
   time.timeZone = "America/New_York";
 
   # System profile packages
