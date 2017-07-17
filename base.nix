@@ -28,6 +28,8 @@
         xmonad-extras ]))
   ];
 
+  environment.variables = { IPFS_PATH = "/var/lib/ipfs/.ipfs"; };
+
   networking.networkmanager.enable = true;
 
   hardware = {
@@ -110,8 +112,4 @@
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "17.03";
-
-  # Copy this configuration file to
-  # /var/run/current-system/configuration.nix
-  system.copySystemConfiguration = true;
 }
