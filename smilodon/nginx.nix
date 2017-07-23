@@ -11,8 +11,6 @@
     virtualHosts = {
       "smilodons.org" = {
         default = true;
-        serverAliases = [ "www.smilodons.org" "localhost" ];
-
         locations = {
           "/" = {
             root = "/data/www";
@@ -21,9 +19,9 @@
           };
         };
 
-        # TODO
-        enableSSL = false;
-        forceSSL = false;
+        enableACME = true;
+        enableSSL = true;
+        forceSSL = true;
       };
 
     };
