@@ -17,6 +17,7 @@
       #./private-internet-access.nix
 
       ./nginx.nix
+      ./ddclient.nix
     ];
 
   # Use the GRUB 2 boot loader.
