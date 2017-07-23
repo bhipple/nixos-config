@@ -25,6 +25,10 @@
   boot.loader.grub.efiSupport = false;
 
   networking.hostName = "smilodon";
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = [ 22 80 443 8080 ];
+  };
 
   users.extraUsers.smilodon = {
     isNormalUser = true;
