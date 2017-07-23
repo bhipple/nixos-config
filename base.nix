@@ -17,7 +17,6 @@
   environment.systemPackages = with pkgs; [
     dmenu
     gitAndTools.gitFull
-    mailutils
     wget
     xlibs.xmessage
 
