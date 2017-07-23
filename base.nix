@@ -90,7 +90,7 @@
       enable = true;
       permitRootLogin = "no";
       passwordAuthentication = false;
-      forwardX11 = true;
+      forwardX11 = false;
     };
 
   };
