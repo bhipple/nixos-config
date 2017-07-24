@@ -28,7 +28,7 @@
   networking.hostName = "smilodon";
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 22 80 443 8080 ];
+    allowedTCPPorts = [ 22 80 443 8080 8443 ];
     connectionTrackingModules = [];
     autoLoadConntrackHelpers = false;
   };
