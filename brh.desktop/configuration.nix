@@ -8,8 +8,9 @@
       ./hardware-configuration.nix
 
       ../base.nix
-      ../private-internet-access.nix
       ../brh-base.nix
+      ../xserver.nix
+      ../private-internet-access.nix
     ];
 
   # Use the GRUB 2 boot loader.
