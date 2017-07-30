@@ -35,4 +35,9 @@
   }];
 
   networking.hostName = "brh.laptop";
+
+  services.xserver.displayManager.sddm.autoLogin = {
+      enable = true;
+      user = "bhipple";
+    };
 }
