@@ -18,6 +18,7 @@
 
       ./nginx.nix
       ./ddclient.nix
+      ../xserver.nix
     ];
 
   # Use the GRUB 2 boot loader.
@@ -31,6 +32,19 @@
     allowedTCPPorts = [ 22 80 443 8080 8443 ];
     connectionTrackingModules = [];
     autoLoadConntrackHelpers = false;
+  };
+
+  services.xserver = {
+    videoDrivers = ["amdgpu-pro"];
+    virtualScreen = { x = 1920; y = 1080; };
+    resolutions = [{ x = 1920; y = 1080; }];
+
+    displayManager.sddm.autoLogin = {
+      enable = true;
+      user = "smilodon";
+    };
+
+    desktopManager.default = "xfce";
   };
 
   users.extraUsers.smilodon = {

@@ -12,6 +12,7 @@
       ./hardware-configuration.nix
 
       ../base.nix
+      ../brh-base.nix
 
       # VPN
       ../private-internet-access.nix

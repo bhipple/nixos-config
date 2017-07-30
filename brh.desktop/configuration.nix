@@ -9,6 +9,7 @@
 
       ../base.nix
       ../private-internet-access.nix
+      ../brh-base.nix
     ];
 
   # Use the GRUB 2 boot loader.
