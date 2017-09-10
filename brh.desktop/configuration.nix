@@ -34,6 +34,8 @@
       #                 "DVI-0"
       #               ];
 
+      resolutions = [{ x = 2560; y = 1600; } { x = 2560; y = 1600; } { x = 2560; y = 1600; }];
+
       # Use proprietary AMD drivers
       videoDrivers = [ "amdgpu-pro" ];
     };
