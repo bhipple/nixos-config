@@ -6,8 +6,8 @@
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 22 8080 ];
-    allowedUDPPorts = [ 22 34197 ];
+    allowedTCPPorts = [ 22 4001 8080 ];
+    allowedUDPPorts = [ 34197 ];
   };
 
   services.xserver.displayManager.sddm.autoLogin = {
