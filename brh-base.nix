@@ -9,4 +9,9 @@
     allowedTCPPorts = [ 22 8080 ];
     allowedUDPPorts = [ 22 34197 ];
   };
+
+  services.xserver.displayManager.sddm.autoLogin = {
+      enable = true;
+      user = "bhipple";
+  };
 }
