@@ -14,4 +14,9 @@
       enable = true;
       user = "bhipple";
   };
+
+  # Ledger Nano S udev rule for Chromium plugin write access
+  services.udev.extraRules = ''
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", ATTRS{idProduct}=="0001", MODE="0660", TAG+="uaccess", TAG+="udev-acl"
+  '';
 }
