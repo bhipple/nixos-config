@@ -5,7 +5,7 @@ let
 in
 {
   network.description = "NixOps";
-  loki =
+  hodl =
     { config, resources, pkgs, ... }:
     {
       deployment.targetEnv = "ec2";
