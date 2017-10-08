@@ -34,6 +34,8 @@
     allowedUDPPorts = [ 34197 ];
   };
 
+  networking.networkmanager.enable = true;
+
   users.extraGroups = {
     plugdev = { gid = 500; };
   };

@@ -9,7 +9,6 @@
   };
 
   programs.zsh.enable = true;
-  networking.networkmanager.enable = true;
   services.cron.enable = true;
 
   # The NixOS release to be compatible with for stateful data such as databases.
