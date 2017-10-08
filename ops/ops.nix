@@ -41,7 +41,7 @@ in
   resources.ebsVolumes.bigdata = {
     inherit region accessKeyId zone;
     name = "ebs-volume";
-    size = 100;
-    volumeType = "standard";
+    size = 25;
+    volumeType = "gp2";
   };
 }
