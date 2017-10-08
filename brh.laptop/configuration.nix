@@ -13,6 +13,7 @@
 
       ../base.nix
       ../brh-base.nix
+      ../hosts.nix
       ../xserver.nix
 
       # VPN
