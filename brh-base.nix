@@ -33,6 +33,7 @@
   security.sudo.extraConfig = ''
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/nix-channel --update
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/poweroff
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/reboot
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl restart openvpn-pia.service
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl start openvpn-pia.service
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl stop openvpn-pia.service
