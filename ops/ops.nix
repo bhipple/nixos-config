@@ -14,8 +14,6 @@ in
       deployment.ec2.zone = zone;
       deployment.ec2.instanceType = "t2.micro";
       deployment.ec2.keyPair = resources.ec2KeyPairs.my-key-pair;
-
-      # WIP
       deployment.ec2.blockDeviceMapping = {
         "/dev/xvdg".disk = resources.ebsVolumes.bigdata;
       };
@@ -23,7 +21,6 @@ in
       fileSystems = {
       "/mnt/storage" = {
         device = "/dev/xvdg";
-        label = "ebs-volume";
         fsType = "ext4";
         autoFormat = true;
       };
