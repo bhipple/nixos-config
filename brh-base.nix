@@ -20,4 +20,12 @@
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", ATTRS{idProduct}=="0001", MODE="0660", TAG+="uaccess", TAG+="udev-acl"
     KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="plugdev", ATTRS{idVendor}=="2c97"
   '';
+
+  security.sudo.extraConfig = ''
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/nix-channel --update
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/poweroff
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl restart openvpn-pia.service
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl start openvpn-pia.service
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl stop openvpn-pia.service
+  '';
 }
