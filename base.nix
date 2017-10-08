@@ -1,5 +1,5 @@
+# Minimal base environment for all my Nix servers
 { config, pkgs, ... }:
-
 {
   # Select internationalisation properties.
   i18n = {
@@ -9,16 +9,12 @@
   };
 
   programs.zsh.enable = true;
-
   networking.networkmanager.enable = true;
-
   services.cron.enable = true;
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "17.03";
-
   time.timeZone = "America/New_York";
-
   users.defaultUserShell = "/run/current-system/sw/bin/zsh";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.

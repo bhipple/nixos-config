@@ -1,26 +1,6 @@
 # Base defaults for my personal machines
 { config, pkgs, ... }:
 {
-  virtualisation = {
-    # Enable Docker Daemon
-    docker.enable = true;
-
-    # Enable virtualbox
-    virtualbox.host.enable = true;
-    virtualbox.guest.enable = true;
-  };
-
-  hardware = {
-    opengl.enable = true;
-    opengl.driSupport = true;
-    opengl.driSupport32Bit = true;
-    pulseaudio = {
-      enable = true;
-      support32Bit = true;
-      systemWide = false;
-    };
-  };
-
   environment.variables = { IPFS_PATH = "/var/lib/ipfs/.ipfs"; };
 
   # System profile packages
@@ -37,14 +17,25 @@
         xmonad-extras ]))
   ];
 
-  users.extraGroups = {
-    plugdev = { gid = 500; };
+  hardware = {
+    opengl.enable = true;
+    opengl.driSupport = true;
+    opengl.driSupport32Bit = true;
+    pulseaudio = {
+      enable = true;
+      support32Bit = true;
+      systemWide = false;
+    };
   };
 
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [ 22 4001 8080 ];
     allowedUDPPorts = [ 34197 ];
+  };
+
+  users.extraGroups = {
+    plugdev = { gid = 500; };
   };
 
   services = {
@@ -89,4 +80,13 @@
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl start openvpn-pia.service
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl stop openvpn-pia.service
   '';
+
+  virtualisation = {
+    # Enable Docker Daemon
+    docker.enable = true;
+
+    # Enable virtualbox
+    virtualbox.host.enable = true;
+    virtualbox.guest.enable = true;
+  };
 }
