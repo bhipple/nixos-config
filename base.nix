@@ -10,23 +10,9 @@
 
   time.timeZone = "America/New_York";
 
-  # System profile packages
-  environment.systemPackages = with pkgs; [
-    dmenu
-    gitAndTools.gitFull
-    wget
-    xlibs.xmessage
-
-    (haskellPackages.ghcWithPackages (ps: with ps;
-      [ xmonad
-        xmobar
-        xmonad-contrib
-        xmonad-extras ]))
-  ];
-
-  environment.variables = { IPFS_PATH = "/var/lib/ipfs/.ipfs"; };
-
   networking.networkmanager.enable = true;
+
+  services.cron.enable = true;
 
   hardware = {
     opengl.enable = true;
@@ -39,35 +25,11 @@
     };
   };
 
-  services = {
-    cron = {
-      enable = true;
-      systemCronJobs = [
-        "* * * * *  bhipple  /home/bhipple/bin/sync-repos > /tmp/bhipple-sync-repos 2&>1"
-      ];
-    };
-
-    postfix.enable = true;
-    ipfs.enable = true;
-
-    openssh = {
-      enable = true;
-      permitRootLogin = "no";
-      passwordAuthentication = false;
-      forwardX11 = false;
-    };
-
-  };
-
   programs = {
     zsh.enable = true;
   };
 
   users.defaultUserShell = "/run/current-system/sw/bin/zsh";
-
-  users.extraGroups = {
-    plugdev = { gid = 500; };
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.extraUsers.bhipple = {
