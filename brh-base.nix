@@ -4,6 +4,15 @@
   services.xserver.windowManager.default = "xmonad";
   services.xserver.desktopManager.default = "none";
 
+  virtualisation = {
+    # Enable Docker Daemon
+    docker.enable = true;
+
+    # Enable virtualbox
+    virtualbox.host.enable = true;
+    virtualbox.guest.enable = true;
+  };
+
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [ 22 4001 8080 ];
@@ -11,8 +20,8 @@
   };
 
   services.xserver.displayManager.sddm.autoLogin = {
-      enable = true;
-      user = "bhipple";
+    enable = true;
+    user = "bhipple";
   };
 
   # Ledger Nano S udev rule for Chromium plugin write access

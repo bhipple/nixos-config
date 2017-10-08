@@ -8,9 +8,6 @@
     defaultLocale = "en_US.UTF-8";
   };
 
-  # Enable Docker Daemon
-  virtualisation.docker.enable = true;
-
   time.timeZone = "America/New_York";
 
   # System profile packages
