@@ -12,7 +12,7 @@
   services.cron.enable = true;
 
   # The NixOS release to be compatible with for stateful data such as databases.
-  system.stateVersion = "17.03";
+  system.stateVersion = "17.09";
   time.timeZone = "America/New_York";
   users.defaultUserShell = "/run/current-system/sw/bin/zsh";
 
