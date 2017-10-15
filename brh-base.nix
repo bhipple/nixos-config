@@ -36,6 +36,11 @@
 
   networking.networkmanager.enable = true;
 
+  programs.ssh = {
+    startAgent = true;
+    agentTimeout = "10h";
+  };
+
   users.extraGroups = {
     plugdev = { gid = 500; };
   };
