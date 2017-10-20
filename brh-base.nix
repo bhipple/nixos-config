@@ -89,11 +89,9 @@
   '';
 
   virtualisation = {
-    # Enable Docker Daemon
-    docker.enable = true;
+    docker.enable = false;
 
-    # Enable virtualbox
-    virtualbox.host.enable = true;
-    virtualbox.guest.enable = true;
+    virtualbox.host.enable = false;
+    virtualbox.guest.enable = false;
   };
 }
