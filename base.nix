@@ -1,6 +1,11 @@
 # Minimal base environment for all my Nix servers
 { config, pkgs, ... }:
 {
+  # Configuration for NixOS itself
+  nix = {
+    package = pkgs.nixUnstable;
+  };
+
   # Select internationalisation properties.
   i18n = {
     consoleFont = "Lat2-Terminus16";
