@@ -46,11 +46,10 @@
         # }
         {
           # Center Monitor
-          # output = "DP-1";
           output = "DisplayPort-0";
           primary = true;
           monitorConfig = ''
-            Option    "Rotate"    "left"
+            Option "Rotate" "left"
           '';
         }
         # {
