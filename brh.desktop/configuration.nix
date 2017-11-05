@@ -30,7 +30,7 @@
       # See config in /etc/X11/xorg.conf
       exportConfiguration = true;
 
-      resolutions = [{ x = 2560; y = 1600; } { x = 2560; y = 1600; } { x = 2560; y = 1600; }];
+      #resolutions = [{ x = 2560; y = 1600; } { x = 2560; y = 1600; } { x = 2560; y = 1600; }];
 
       # Use proprietary AMD drivers
       videoDrivers = [ "amdgpu-pro" "ati" ];
@@ -46,7 +46,7 @@
         # }
         {
           # Center Monitor
-          #output = "DP-1";
+          # output = "DP-1";
           output = "DisplayPport-0";
           primary = true;
           monitorConfig = ''
