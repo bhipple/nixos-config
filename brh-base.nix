@@ -1,7 +1,7 @@
 # Base defaults for my personal machines
 { config, pkgs, ... }:
 {
-  environment.variables = { IPFS_PATH = "/var/lib/ipfs/.ipfs"; };
+  environment.variables = { IPFS_PATH = "/var/lib/ipfs"; };
 
   # System profile packages
   environment.systemPackages = with pkgs; [
