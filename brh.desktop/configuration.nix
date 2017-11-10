@@ -33,7 +33,7 @@
       exportConfiguration = true;
 
       # Use proprietary AMD drivers
-      videoDrivers = [ "amdgpu-pro" ];
+      videoDrivers = [ "amdgpu" ];
 
       xrandrHeads = [
         {
