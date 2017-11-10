@@ -33,12 +33,7 @@
       exportConfiguration = true;
 
       # Use proprietary AMD drivers
-      #videoDrivers = [ "amdgpu-pro" "ati" ];
       videoDrivers = [ "amdgpu-pro" ];
-
-      # serverLayoutSection = ''
-      #   Option "Xinerama" "on"
-      # '';
 
       xrandrHeads = [
         {
@@ -46,7 +41,6 @@
           output = "DVI-D-0";
           monitorConfig = ''
             Option "Rotate" "left"
-            #Option "Position" "0" "0"
           '';
         }
         {
@@ -55,7 +49,6 @@
           primary = true;
           monitorConfig = ''
             Option "Rotate" "left"
-            #Option "Position" "1600" "0"
           '';
         }
         {
@@ -63,14 +56,11 @@
           output = "DVI-D-1";
           monitorConfig = ''
             Option "Rotate" "left"
-            #Option "Position" "3200" "0"
           '';
         }
       ];
     };
   };
 
-  programs = {
-    adb.enable = true;
-  };
+  programs.adb.enable = true;
 }
