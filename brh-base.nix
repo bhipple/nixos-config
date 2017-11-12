@@ -89,7 +89,7 @@
   '';
 
   virtualisation = {
-    docker.enable = false;
+    docker.enable = true;
 
     virtualbox.host.enable = false;
     virtualbox.guest.enable = false;
