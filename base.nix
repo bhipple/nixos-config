@@ -3,6 +3,7 @@
 {
   # Configuration for NixOS itself
   nix = {
+    useSandbox = true;
     package = pkgs.nixUnstable;
   };
 
