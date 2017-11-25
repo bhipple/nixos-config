@@ -30,7 +30,6 @@
   };
 
   services.xserver = {
-    videoDrivers = ["amdgpu-pro"];
     virtualScreen = { x = 1920; y = 1080; };
     resolutions = [{ x = 1920; y = 1080; }];
 
@@ -39,7 +38,7 @@
       user = "smilodon";
     };
 
-    desktopManager.default = "xfce";
+    desktopManager.default = "plasma5";
   };
 
   users.extraUsers.smilodon = {

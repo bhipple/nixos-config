@@ -14,6 +14,18 @@
     defaultLocale = "en_US.UTF-8";
   };
 
+  programs.ssh = {
+    startAgent = true;
+    agentTimeout = "10h";
+  };
+
+  services.openssh = {
+      enable = true;
+      permitRootLogin = "no";
+      passwordAuthentication = true;
+      forwardX11 = false;
+    };
+
   programs.zsh.enable = true;
   services.cron.enable = true;
 

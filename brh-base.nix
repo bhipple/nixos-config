@@ -36,11 +36,6 @@
 
   networking.networkmanager.enable = true;
 
-  programs.ssh = {
-    startAgent = true;
-    agentTimeout = "10h";
-  };
-
   users.extraGroups = {
     plugdev = { gid = 500; };
   };
@@ -54,13 +49,6 @@
 
     postfix.enable = true;
     ipfs.enable = true;
-
-    openssh = {
-      enable = true;
-      permitRootLogin = "no";
-      passwordAuthentication = false;
-      forwardX11 = false;
-    };
 
     xserver = {
       windowManager.default = "xmonad";

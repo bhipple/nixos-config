@@ -22,7 +22,7 @@
       };
 
       desktopManager = {
-        plasma5.enable = false;
+        plasma5.enable = true;
         xterm.enable = true;
         xfce.enable = true;
       };
