@@ -12,13 +12,13 @@
       #./private-internet-access.nix
 
       ./nginx.nix
-      ./ddclient.nix
+      #./ddclient.nix
       ../xserver.nix
     ];
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
-  boot.loader.grub.device = "/dev/sdd";
+  boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.efiSupport = false;
 
   networking.hostName = "smilodon";
@@ -45,7 +45,7 @@
   users.extraUsers.smilodon = {
     isNormalUser = true;
     description = "Smilodon";
-    extraGroups = [ "smilodon" "users" "ipfs" "networkmanager" ];
+    extraGroups = [ "smilodon" "users" "ipfs" "networkmanager" "wheel" ];
   };
 
   users.extraUsers.chipple = {

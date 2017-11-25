@@ -20,8 +20,7 @@
         };
 
         enableACME = true;
-        enableSSL = true;
-        forceSSL = true;
+        onlySSL = true;
       };
 
     };
