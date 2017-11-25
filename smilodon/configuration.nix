@@ -38,7 +38,7 @@
       user = "smilodon";
     };
 
-    desktopManager.default = "plasma5";
+    desktopManager.default = "gnome3";
   };
 
   users.extraUsers.smilodon = {

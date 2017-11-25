@@ -22,6 +22,7 @@
       };
 
       desktopManager = {
+        gnome3.enable = true;
         plasma5.enable = true;
         xterm.enable = true;
         xfce.enable = true;
