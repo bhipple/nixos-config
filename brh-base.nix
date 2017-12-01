@@ -36,6 +36,8 @@
 
   networking.networkmanager.enable = true;
 
+  programs.adb.enable = true;
+
   users.extraGroups = {
     plugdev = { gid = 500; };
   };

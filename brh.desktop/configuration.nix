@@ -61,6 +61,4 @@
       ];
     };
   };
-
-  programs.adb.enable = true;
 }
