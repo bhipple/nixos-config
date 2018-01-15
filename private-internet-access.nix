@@ -1,6 +1,16 @@
 # Configuration for Private Internet Access VPN
 { ... }:
 
+let
+  # See https://www.privateinternetaccess.com/openvpn/openvpn.zip for a complete
+  # list of available VPNs
+  nyc = "us-newyorkcity";
+  texas = "us-texas";
+  switzerland = "swiss";
+  london = "uk-london";
+
+  selected = nyc;
+in
 { services.openvpn = {
   servers.pia = {
     autoStart = true;
@@ -8,7 +18,7 @@
       client
       dev tun
       proto udp
-      remote us-newyorkcity.privateinternetaccess.com 1198
+      remote ${selected}.privateinternetaccess.com 1198
       resolv-retry infinite
       nobind
       persist-key
