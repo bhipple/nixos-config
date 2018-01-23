@@ -9,7 +9,7 @@ let
   switzerland = "swiss";
   london = "uk-london";
 
-  selected = nyc;
+  selected = texas;
 in
 { services.openvpn = {
   servers.pia = {
