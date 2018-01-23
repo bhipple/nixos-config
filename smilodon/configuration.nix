@@ -9,7 +9,7 @@
       ../base.nix
 
       # VPN
-      #./private-internet-access.nix
+      #./vpn.nix
 
       ./nginx.nix
       #./ddclient.nix

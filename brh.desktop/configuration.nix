@@ -11,7 +11,7 @@
       ../brh-base.nix
       ../hosts.nix
       ../xserver.nix
-      ../private-internet-access.nix
+      ../vpn.nix
     ];
 
   # Use the GRUB 2 boot loader.

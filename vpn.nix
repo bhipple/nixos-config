@@ -11,7 +11,8 @@ let
 
   selected = texas;
 in
-{ services.openvpn = {
+{
+  services.openvpn = {
   servers.pia = {
     autoStart = true;
     config = ''
