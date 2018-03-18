@@ -49,8 +49,15 @@
       ];
     };
 
-    postfix.enable = true;
+    emacs.enable = true;
     ipfs.enable = true;
+    postfix.enable = true;
+
+    # Ledger Nano S udev rule for Chromium plugin write access
+    udev.extraRules = ''
+      SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", ATTRS{idProduct}=="0001", MODE="0660", TAG+="uaccess", TAG+="udev-acl"
+      KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="plugdev", ATTRS{idVendor}=="2c97"
+    '';
 
     xserver = {
       windowManager.default = "xmonad";
@@ -60,13 +67,6 @@
         user = "bhipple";
       };
     };
-
-    # Ledger Nano S udev rule for Chromium plugin write access
-    udev.extraRules = ''
-      SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", ATTRS{idProduct}=="0001", MODE="0660", TAG+="uaccess", TAG+="udev-acl"
-      KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="plugdev", ATTRS{idVendor}=="2c97"
-    '';
-
   };
 
   security.sudo.extraConfig = ''
