@@ -23,15 +23,16 @@
     agentTimeout = "10h";
   };
 
+  programs.zsh.enable = true;
+
+  services.cron.enable = true;
+
   services.openssh = {
       enable = true;
       permitRootLogin = "no";
       passwordAuthentication = true;
       forwardX11 = false;
     };
-
-  programs.zsh.enable = true;
-  services.cron.enable = true;
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "17.09";
