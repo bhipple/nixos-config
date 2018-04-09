@@ -14,6 +14,10 @@
     defaultLocale = "en_US.UTF-8";
   };
 
+  networking = {
+    nameservers = [ "1.1.1.1" ];
+  };
+
   programs.ssh = {
     startAgent = true;
     agentTimeout = "10h";
