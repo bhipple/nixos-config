@@ -1,12 +1,6 @@
 # Minimal base environment for all my Nix servers
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
-  # Configuration for NixOS itself
-  nix = {
-    useSandbox = true;
-    package = pkgs.nixUnstable;
-  };
-
   # Select internationalisation properties.
   i18n = {
     consoleFont = "Lat2-Terminus16";
