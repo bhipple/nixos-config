@@ -45,7 +45,6 @@
   services = {
     cron = {
       systemCronJobs = [
-        "* * * * *  bhipple  /home/bhipple/bin/sync-repos > /tmp/bhipple-sync-repos 2&>1"
       ];
     };
 
