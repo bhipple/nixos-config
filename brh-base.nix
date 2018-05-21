@@ -73,9 +73,9 @@
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/nix-channel --update
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/poweroff
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/reboot
-    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl restart openvpn-protovpn.service
-    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl start openvpn-protovpn.service
-    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl stop openvpn-protovpn.service
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl restart openvpn-protonvpn.service
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl start openvpn-protonvpn.service
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl stop openvpn-protonvpn.service
   '';
 
   virtualisation = {
