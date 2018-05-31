@@ -1,6 +1,8 @@
 # Minimal base environment for all my Nix servers
 { pkgs, ... }:
 {
+  nix.useSandbox = true;
+
   # Select internationalisation properties.
   i18n = {
     consoleFont = "Lat2-Terminus16";

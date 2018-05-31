@@ -15,10 +15,7 @@
     ];
 
    # Delete once I move the desktop to NixOS 18.03
-   nix = {
-     useSandbox = true;
-     package = pkgs.nixUnstable;
-   };
+   nix.package = pkgs.nixUnstable;
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
