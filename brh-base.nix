@@ -49,8 +49,8 @@
     };
 
     emacs.enable = true;
-    ipfs.enable = true;
-    postfix.enable = true;
+    ipfs.enable = false;
+    postfix.enable = false;
 
     # Ledger Nano S udev rule for Chromium plugin write access
     udev.extraRules = ''
@@ -78,8 +78,7 @@
   '';
 
   virtualisation = {
-    docker.enable = true;
-
+    docker.enable = false;
     virtualbox.host.enable = false;
     virtualbox.guest.enable = false;
   };
