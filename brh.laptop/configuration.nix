@@ -32,4 +32,6 @@
   }];
 
   networking.hostName = "brh.laptop";
+
+  services.monero.enable = true;
 }
