@@ -65,6 +65,7 @@
         enable = true;
         user = "bhipple";
       };
+      displayManager.gdm.enable = false;
     };
   };
 
