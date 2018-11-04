@@ -33,5 +33,11 @@
 
   networking.hostName = "brh.laptop";
 
-  services.monero.enable = true;
+  services.monero.enable = false;
+
+  virtualisation = {
+    docker.enable = true;
+    virtualbox.host.enable = false;
+    virtualbox.guest.enable = false;
+  };
 }

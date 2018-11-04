@@ -77,10 +77,4 @@
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl start openvpn-protonvpn.service
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl stop openvpn-protonvpn.service
   '';
-
-  virtualisation = {
-    docker.enable = false;
-    virtualbox.host.enable = false;
-    virtualbox.guest.enable = false;
-  };
 }
