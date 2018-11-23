@@ -1,12 +1,11 @@
 # Base defaults for my personal machines
 { pkgs, ... }:
 {
-  environment.variables = { IPFS_PATH = "/var/lib/ipfs"; };
-
   # System profile packages
   environment.systemPackages = with pkgs; [
     dmenu
     gitAndTools.gitFull
+    ipfs
     wget
     xlibs.xmessage
 
@@ -30,7 +29,7 @@
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 22 4001 8080 ];
+    allowedTCPPorts = [ 22 ];
     allowedUDPPorts = [ 34197 ];
   };
 
@@ -48,8 +47,14 @@
       ];
     };
 
-    emacs.enable = true;
-    ipfs.enable = false;
+    # TODO: Find the cleanest way to get the spacemacs config into the NixPkgs
+    # import. It doesn't have my overlay in scope at the moment.
+    emacs = {
+      enable = false;
+      package = pkgs.spacemacs;
+    };
+
+    ipfs.enable = true;
     postfix.enable = false;
 
     # Ledger Nano S udev rule for Chromium plugin write access
