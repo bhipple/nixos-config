@@ -29,13 +29,13 @@
 
   networking.firewall = {
     enable = true;
-    allowedTCPPorts = [ 22 ];
+    allowedTCPPorts = [ 22 4001 ];
     allowedUDPPorts = [ 34197 ];
   };
 
   networking.networkmanager.enable = true;
 
-  programs.adb.enable = true;
+  programs.adb.enable = false;
 
   users.extraGroups = {
     plugdev = { gid = 500; };
@@ -49,10 +49,10 @@
 
     # TODO: Find the cleanest way to get the spacemacs config into the NixPkgs
     # import. It doesn't have my overlay in scope at the moment.
-    emacs = {
-      enable = false;
-      package = pkgs.spacemacs;
-    };
+    # emacs = {
+    #   enable = false;
+    #   package = pkgs.spacemacs;
+    # };
 
     ipfs.enable = true;
     postfix.enable = false;
