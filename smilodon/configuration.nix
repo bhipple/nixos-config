@@ -11,7 +11,7 @@
       # VPN
       #./vpn.nix
 
-      ./nginx.nix
+      # ./nginx.nix
       #./ddclient.nix
       ../xserver.nix
     ];
@@ -38,7 +38,7 @@
       user = "smilodon";
     };
 
-    desktopManager.default = "gnome3";
+    desktopManager.default = "xfce";
   };
 
   users.extraUsers.smilodon = {
