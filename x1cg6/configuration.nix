@@ -8,7 +8,7 @@
       ../base.nix
       ../brh-base.nix
       # ../hosts.nix
-      ../xserver.nix
+      # ../xserver.nix
 
       # VPN
       # ../vpn.nix
@@ -26,4 +26,9 @@
   }];
 
   networking.hostName = "x1cg6";
+
+  services.xserver = {
+    enable = true;
+    desktopManager.xfce.enable = true;
+  };
 }

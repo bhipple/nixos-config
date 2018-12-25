@@ -33,7 +33,8 @@
     allowedUDPPorts = [ 34197 ];
   };
 
-  networking.networkmanager.enable = true;
+  networking.networkmanager.enable = false;
+  networking.wireless.enable = true;
 
   programs.adb.enable = false;
 
@@ -63,15 +64,15 @@
       KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="plugdev", ATTRS{idVendor}=="2c97"
     '';
 
-    xserver = {
-      windowManager.default = "xmonad";
-      desktopManager.default = "none";
-      displayManager.sddm.autoLogin = {
-        enable = true;
-        user = "bhipple";
-      };
-      displayManager.gdm.enable = false;
-    };
+    # xserver = {
+    #   windowManager.default = "xmonad";
+    #   desktopManager.default = "none";
+    #   displayManager.sddm.autoLogin = {
+    #     enable = true;
+    #     user = "bhipple";
+    #   };
+    #   displayManager.gdm.enable = false;
+    # };
   };
 
   security.sudo.extraConfig = ''
