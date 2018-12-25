@@ -15,8 +15,6 @@
         enableContribAndExtras = true;
         extraPackages = haskellPackages: [
           haskellPackages.xmobar
-          haskellPackages.xmonad-contrib
-          haskellPackages.xmonad-extras
         ];
       };
     };
@@ -25,9 +23,14 @@
       gnome3.enable = true;
       xterm.enable = true;
       xfce.enable = true;
-      xmonad.enable = true;
     };
 
-    displayManager.sddm.enable = true;
+    displayManager.sddm = {
+      enable = true;
+      autoLogin = {
+        enable = false;
+        user = "bhipple";
+      };
+    };
   };
 }

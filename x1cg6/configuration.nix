@@ -7,7 +7,7 @@
     ../base.nix
     ../brh-base.nix
     # ../hosts.nix
-    # ../xserver.nix
+    ../xserver.nix
 
     # VPN
     # ../vpn.nix
@@ -25,28 +25,4 @@
   }];
 
   networking.hostName = "brh.x1cg6";
-
-  services.xserver = {
-    enable = true;
-
-    desktopManager.xfce.enable = true;
-
-    windowManager = {
-      xmonad = {
-        enable = true;
-        enableContribAndExtras = true;
-        extraPackages = haskellPackages: [
-          haskellPackages.xmobar
-        ];
-      };
-    };
-
-    displayManager.sddm = {
-      enable = true;
-      autoLogin = {
-        enable = false;
-        user = "bhipple";
-      };
-    };
-  };
 }
