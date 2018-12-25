@@ -25,7 +25,7 @@
     allowDiscards = true;
   }];
 
-  networking.hostName = "x1cg6";
+  networking.hostName = "brh.x1cg6";
 
   services.xserver = {
     enable = true;
