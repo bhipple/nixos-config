@@ -31,10 +31,20 @@
 
     desktopManager.xfce.enable = true;
 
+    windowManager = {
+      xmonad = {
+        enable = true;
+        enableContribAndExtras = true;
+        extraPackages = haskellPackages: [
+          haskellPackages.xmobar
+        ];
+      };
+    };
+
     displayManager.sddm = {
       enable = true;
       autoLogin = {
-        enable = true;
+        enable = false;
         user = "bhipple";
       };
     };

@@ -25,6 +25,7 @@
       gnome3.enable = true;
       xterm.enable = true;
       xfce.enable = true;
+      xmonad.enable = true;
     };
 
     displayManager.sddm.enable = true;
