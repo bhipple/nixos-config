@@ -31,6 +31,12 @@
 
     desktopManager.xfce.enable = true;
 
-    displayManager.sddm.enable = true;
+    displayManager.sddm = {
+      enable = true;
+      autoLogin = {
+        enable = true;
+        user = "bhipple";
+      };
+    };
   };
 }
