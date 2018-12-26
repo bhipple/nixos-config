@@ -6,11 +6,11 @@
 
     ../base.nix
     ../brh-base.nix
-    # ../hosts.nix
+    ../hosts.nix
     ../xserver.nix
 
     # VPN
-    # ../vpn.nix
+    ../vpn.nix
   ];
 
   # Use the systemd-boot EFI boot loader.
