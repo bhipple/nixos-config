@@ -10,6 +10,8 @@
 
     # Enable XMonad Configuration extras
     windowManager = {
+      default = "xmonad";
+
       xmonad = {
         enable = true;
         enableContribAndExtras = true;
@@ -20,8 +22,7 @@
     };
 
     desktopManager = {
-      gnome3.enable = true;
-      xterm.enable = true;
+      default = "none";
       xfce.enable = true;
     };
 
