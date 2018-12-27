@@ -33,8 +33,8 @@
     allowedUDPPorts = [ 34197 ];
   };
 
-  networking.networkmanager.enable = false;
-  networking.wireless.enable = true;
+  networking.networkmanager.enable = true;
+  networking.wireless.enable = false;
 
   programs.adb.enable = false;
 
