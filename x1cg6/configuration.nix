@@ -1,8 +1,14 @@
 { config, pkgs, ... }:
+let
+  nixos-hardware = builtins.fetchTarball {
+    url = "https://github.com/NixOS/nixos-hardware/archive/1e2c130d38d72860660474c36207b099c519cb6a.tar.gz";
+    sha256 = "052kkvc0x8rizsbnjdaybiw18ihrr7gx6yyvw5g7x16fpvrsh1vz";
+  };
 
-{
+in {
   imports = [
     ./hardware-configuration.nix
+   "${nixos-hardware}/lenovo/thinkpad/x1/6th-gen"
 
     ../base.nix
     ../brh-base.nix
