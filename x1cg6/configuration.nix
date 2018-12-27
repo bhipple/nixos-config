@@ -19,11 +19,6 @@ in {
     ../vpn.nix
   ];
 
-  boot.kernelParams = [
-    # Enable S3 suspend state
-    "mem_sleep_default=deep"
-  ];
-
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
