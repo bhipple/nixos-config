@@ -1,7 +1,11 @@
 # Minimal base environment for all my Nix servers
 { pkgs, ... }:
 {
-  nix.useSandbox = true;
+  # See options with `man mount`
+  fileSystems."/".options = [
+    "noatime"  # Large performance boost
+    "discard"  # Send TRIM commands to the ssd
+  ];
 
   # Select internationalisation properties.
   i18n = {
