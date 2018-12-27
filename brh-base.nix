@@ -63,16 +63,6 @@
       SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", ATTRS{idProduct}=="0001", MODE="0660", TAG+="uaccess", TAG+="udev-acl"
       KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="plugdev", ATTRS{idVendor}=="2c97"
     '';
-
-    # xserver = {
-    #   windowManager.default = "xmonad";
-    #   desktopManager.default = "none";
-    #   displayManager.sddm.autoLogin = {
-    #     enable = true;
-    #     user = "bhipple";
-    #   };
-    #   displayManager.gdm.enable = false;
-    # };
   };
 
   security.sudo.extraConfig = ''

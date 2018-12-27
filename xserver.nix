@@ -29,7 +29,7 @@
     displayManager.sddm = {
       enable = true;
       autoLogin = {
-        enable = false;
+        enable = true;
         user = "bhipple";
       };
     };
