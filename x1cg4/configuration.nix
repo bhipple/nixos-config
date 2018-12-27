@@ -1,8 +1,6 @@
 { config, pkgs, ... }:
 
 {
-  nixpkgs.config.allowUnfree = true;
-
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
@@ -31,7 +29,7 @@
     allowDiscards = true;
   }];
 
-  networking.hostName = "brh.laptop";
+  networking.hostName = "brh.x1cg4";
 
   services.monero.enable = false;
 

@@ -18,6 +18,8 @@
     nameservers = [ "1.1.1.1" ];
   };
 
+  nixpkgs.config.allowUnfree = true;
+
   programs.ssh = {
     startAgent = true;
     agentTimeout = "10h";
