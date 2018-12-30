@@ -6,6 +6,7 @@
     dmenu
     gitAndTools.gitFull
     ipfs
+    vim_configurable
     wget
     xlibs.xmessage
 
