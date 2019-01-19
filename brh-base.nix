@@ -58,6 +58,12 @@
     ipfs.enable = true;
     postfix.enable = false;
 
+    redshift = {
+      enable = true;
+      latitude = "40.47";
+      longitude = "73.57";
+    };
+
     # Ledger Nano S udev rule for Chromium plugin write access
     udev.extraRules = ''
       SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", ATTRS{idProduct}=="0001", MODE="0660", TAG+="uaccess", TAG+="udev-acl"
