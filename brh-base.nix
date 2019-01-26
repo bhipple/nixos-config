@@ -6,7 +6,6 @@
     dmenu
     gitAndTools.gitFull
     ipfs
-    slock
     wget
     xlibs.xmessage
 
@@ -58,7 +57,8 @@
     # };
 
     ipfs.enable = true;
-    postfix.enable = false;
+
+    physlock.enable = true;
 
     redshift = {
       enable = true;
@@ -78,11 +78,12 @@
 
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/poweroff
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/reboot
-    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/slock
 
-    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl restart openvpn-protonvpn.service
-    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl start openvpn-protonvpn.service
-    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl status openvpn-protonvpn.service
-    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl stop openvpn-protonvpn.service
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl restart openvpn-protonvpn
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl start openvpn-protonvpn
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl status openvpn-protonvpn
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl stop openvpn-protonvpn
+
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl start physlock
   '';
 }
