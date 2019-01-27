@@ -45,7 +45,7 @@
   services = {
     cron = {
       systemCronJobs = [
-        "0 * * * *  bhipple /home/bhipple/bin/sync-repos > /tmp/bhipple-sync-repos 2&>1"
+        "*/15 * * * *  bhipple /home/bhipple/bin/sync-repos > /tmp/bhipple-sync-repos 2&>1"
       ];
     };
 
@@ -62,8 +62,8 @@
 
     redshift = {
       enable = true;
-      latitude = "40.47";
-      longitude = "73.57";
+      latitude = "40.71427";
+      longitude = "-74.00597";
     };
 
     # Ledger Nano S udev rule for Chromium plugin write access
