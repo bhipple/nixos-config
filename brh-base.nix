@@ -59,7 +59,7 @@
     #   package = pkgs.spacemacs;
     # };
 
-    ipfs.enable = true;
+    ipfs.enable = false;
 
     physlock.enable = true;
 
