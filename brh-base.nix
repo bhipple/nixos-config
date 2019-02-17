@@ -10,6 +10,7 @@
     gitAndTools.gitFull
     ipfs
     wget
+    xautolock
     xlibs.xmessage
 
     (haskellPackages.ghcWithPackages (ps: with ps;
