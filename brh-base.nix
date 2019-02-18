@@ -9,6 +9,7 @@
     dmenu
     gitAndTools.gitFull
     ipfs
+    slock
     wget
     xautolock
     xlibs.xmessage
@@ -62,8 +63,6 @@
 
     ipfs.enable = false;
 
-    physlock.enable = true;
-
     redshift = {
       enable = true;
       latitude = "40.71427";
@@ -88,6 +87,6 @@
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl status openvpn-protonvpn
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl stop openvpn-protonvpn
 
-    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl start physlock
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/slock
   '';
 }
