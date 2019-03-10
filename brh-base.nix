@@ -69,6 +69,14 @@
       longitude = "-74.00597";
     };
 
+    syncthing = {
+      enable = true;
+      user = "bhipple";
+      group = "users";
+      dataDir = "/home/bhipple/syncthing";
+      openDefaultPorts = true;
+    };
+
     # Ledger Nano S udev rule for Chromium plugin write access
     udev.extraRules = ''
       SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", ATTRS{idProduct}=="0001", MODE="0660", TAG+="uaccess", TAG+="udev-acl"
