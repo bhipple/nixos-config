@@ -1,9 +1,6 @@
 # Base defaults for my personal machines
 { pkgs, ... }:
 {
-
-  boot.kernelPackages = pkgs.linuxPackages_4_19;
-
   # System profile packages
   environment.systemPackages = with pkgs; [
     dmenu
