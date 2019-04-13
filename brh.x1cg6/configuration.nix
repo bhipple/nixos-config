@@ -35,16 +35,16 @@ in {
   services.influxdb.enable = true;
   services.grafana = {
     enable = true;
-    # This isn't available until NixOS 19.03
-    # provision = {
-    #   datasources = [{
-    #     name = "influx-finance";
-    #     type = "influxdb";
-    #     access = "direct";
-    #     url = "http://localhost:8086";
-    #     database = "finance";
-    #     isDefault = true;
-    #   }];
-    # };
+    provision = {
+      enable = true;
+      datasources = [{
+        name = "personal";
+        type = "influxdb";
+        access = "direct";
+        url = "http://localhost:8086";
+        database = "personal";
+        isDefault = true;
+      }];
+    };
   };
 }
