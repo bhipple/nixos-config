@@ -47,7 +47,8 @@
   services = {
     cron = {
       systemCronJobs = [
-        "*/15 * * * *  bhipple /home/bhipple/bin/sync-repos > /tmp/bhipple-sync-repos 2&>1"
+        "*/15 * * * *  bhipple /home/bhipple/bin/sync-repos"
+        "0 * * * *     bhipple /home/bhipple/ledger/scripts/influx-personal.sh"
       ];
     };
 
