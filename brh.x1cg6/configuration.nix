@@ -41,9 +41,12 @@ in {
         name = "personal";
         type = "influxdb";
         access = "direct";
-        url = "http://localhost:8086";
+        url = http://localhost:8086;
         database = "personal";
         isDefault = true;
+      }];
+      dashboards = [{
+        options.path = /etc/nixos/grafana/provisioning/dashboards;
       }];
     };
   };
