@@ -46,7 +46,7 @@ in {
         isDefault = true;
       }];
       dashboards = [{
-        options.path = /etc/nixos/grafana/provisioning/dashboards;
+        options.path = ../grafana/provisioning/dashboards;
       }];
     };
   };
