@@ -31,36 +31,4 @@ in {
   }];
 
   networking.hostName = "brh.x1cg6";
-
-  services.influxdb.enable = true;
-  services.grafana = {
-    enable = true;
-    provision = {
-      enable = true;
-      datasources = [{
-        name = "personal";
-        type = "influxdb";
-        access = "direct";
-        url = http://localhost:8086;
-        database = "personal";
-        isDefault = true;
-      } {
-        name = "brh-finance";
-        type = "influxdb";
-        access = "direct";
-        url = http://localhost:8086;
-        database = "brh-finance";
-      } {
-        name = "brh-food";
-        type = "influxdb";
-        access = "direct";
-        url = http://localhost:8086;
-        database = "brh-food";
-      }
-      ];
-      dashboards = [{
-        options.path = ../grafana/provisioning/dashboards;
-      }];
-    };
-  };
 }
