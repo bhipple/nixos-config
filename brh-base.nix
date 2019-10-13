@@ -29,6 +29,11 @@
     };
   };
 
+  location = {
+    latitude = 40.71427;
+    longitude = -74.00597;
+  };
+
   networking.firewall = {
     enable = true;
     allowedTCPPorts = [ 22 4001 8080 ];
@@ -61,44 +66,42 @@
     #   package = pkgs.spacemacs;
     # };
 
-  influxdb.enable = true;
-  grafana = {
-    enable = true;
-    provision = {
-      enable = true;
-      datasources = [{
-        name = "personal";
-        type = "influxdb";
-        access = "direct";
-        url = http://localhost:8086;
-        database = "personal";
-        isDefault = true;
-      } {
-        name = "brh-finance";
-        type = "influxdb";
-        access = "direct";
-        url = http://localhost:8086;
-        database = "brh-finance";
-      } {
-        name = "brh-food";
-        type = "influxdb";
-        access = "direct";
-        url = http://localhost:8086;
-        database = "brh-food";
-      }
-      ];
-      dashboards = [{
-        options.path = ./grafana/provisioning/dashboards;
-      }];
-    };
-  };
+    influxdb.enable = true;
+
     ipfs.enable = false;
 
-    redshift = {
+    grafana = {
       enable = true;
-      latitude = "40.71427";
-      longitude = "-74.00597";
+      provision = {
+        enable = true;
+        datasources = [{
+          name = "personal";
+          type = "influxdb";
+          access = "direct";
+          url = http://localhost:8086;
+          database = "personal";
+          isDefault = true;
+        } {
+          name = "brh-finance";
+          type = "influxdb";
+          access = "direct";
+          url = http://localhost:8086;
+          database = "brh-finance";
+        } {
+          name = "brh-food";
+          type = "influxdb";
+          access = "direct";
+          url = http://localhost:8086;
+          database = "brh-food";
+        }
+        ];
+        dashboards = [{
+          options.path = ./grafana/provisioning/dashboards;
+        }];
+      };
     };
+
+    redshift.enable = true;
 
     syncthing = {
       enable = true;
