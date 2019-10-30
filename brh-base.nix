@@ -45,10 +45,6 @@
 
   programs.adb.enable = false;
 
-  users.extraGroups = {
-    plugdev = { gid = 500; };
-  };
-
   services = {
     cron = {
       systemCronJobs = [
@@ -131,4 +127,9 @@
 
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/slock
   '';
+
+  users.extraGroups = {
+    plugdev = { gid = 500; };
+  };
+
 }
