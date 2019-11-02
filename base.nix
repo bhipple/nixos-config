@@ -30,14 +30,13 @@
   services.cron.enable = true;
 
   services.openssh = {
-      enable = true;
-      permitRootLogin = "no";
-      passwordAuthentication = false;
-      forwardX11 = false;
-    };
+    enable = true;
+    passwordAuthentication = false;
+    forwardX11 = false;
+  };
 
   # The NixOS release to be compatible with for stateful data such as databases.
-  system.stateVersion = "18.09";
+  system.stateVersion = "19.09";
   time.timeZone = "America/New_York";
   users.defaultUserShell = "/run/current-system/sw/bin/zsh";
 
@@ -47,7 +46,7 @@
     description = "Benjamin Hipple";
     extraGroups = [ "adbusers" "bhipple" "docker" "ipfs" "networkmanager" "plugdev" "users" "wheel" ];
     openssh.authorizedKeys.keys = [
-      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCuP/Z+l3KI5g0SmZ4s0vv3N2OdUEAwc9sBuFG1d8XYLbJEaaTONBGh2sSzMjqNnetyl1e9lz/Yn/406gksjhweR6A1AqTd/Ty8CKzzOD7YCu0QBMOo+hgHxO3LQS+WbB3ygAjZ/uzakSDwaAxHQcZgRiRNFIf+zadQgJ+4sVB2NDTGL16L1Ok252NpBfGdnojU51E2ZnQLj6Dq5ZgrpLrfZEAJkPqcmcjl2IhoFDveSxTvvmoxBAIbZYgHdQY/hSz7k3UOBIBNNV2u6XxW1pr35ySwJVGFav+6KiZR1IaHAka9GW8EeX0Au9QEmUVIZcdWrJHOB4xO4sgSCKaiI7bB"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINCyn5P9LSm/yfox7qrbWthnbAI2yQHoXotI/6iNE1XY"
     ];
   };
 }
