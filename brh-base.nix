@@ -43,6 +43,12 @@
   networking.networkmanager.enable = true;
   networking.wireless.enable = false;
 
+  nixpkgs.overlays = [
+    (import (builtins.fetchTarball {
+      url = https://github.com/nix-community/emacs-overlay/archive/master.tar.gz;
+    }))
+  ];
+
   programs.adb.enable = false;
 
   services = {
