@@ -1,8 +1,8 @@
 { config, pkgs, ... }:
 let
   nixos-hardware = builtins.fetchTarball {
-    url = "https://github.com/NixOS/nixos-hardware/archive/54268d11ae4e7a35e6085c5561a8d585379e5c73.tar.gz";
-    sha256 = "1nvhbawa9y2vn68zgqnyyxiv8ijrqxgxzz1bij2lcac40lf1f8nl";
+    url = "https://github.com/NixOS/nixos-hardware/archive/adecd1113c2d4137ef23237f9af450736fd8d2cc.tar.gz";
+    sha256 = "1k4zl5c0ak525japzxmddimzac1szhlwd83b7i4v24a32lbwhlkz";
   };
 
 in {
@@ -31,4 +31,6 @@ in {
   }];
 
   networking.hostName = "brh.x1cg6";
+
+  services.fwupd.enable = true;
 }
