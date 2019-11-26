@@ -3,8 +3,8 @@
 {
   # See options with `man mount`
   fileSystems."/".options = [
-    "noatime"  # Large performance boost
-    "discard"  # Send TRIM commands to the ssd
+    "noatime" # Large performance boost
+    "discard" # Send TRIM commands to the ssd
   ];
 
   # Select internationalisation properties.

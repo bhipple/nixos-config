@@ -1,18 +1,18 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [ # Include the results of the hardware scan.
-      ./hardware-configuration.nix
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
 
-      ../base.nix
-      ../brh-base.nix
-      ../hosts.nix
-      ../xserver.nix
+    ../base.nix
+    ../brh-base.nix
+    ../hosts.nix
+    ../xserver.nix
 
-      # VPN
-      ../vpn.nix
-    ];
+    # VPN
+    ../vpn.nix
+  ];
 
   boot.kernelParams = [ "intel_pstate=no_hwp" ];
 
@@ -22,12 +22,14 @@
   boot.loader.grub.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices = [{
-    name = "root";
-    device = "/dev/sda2";
-    preLVM = true;
-    allowDiscards = true;
-  }];
+  boot.initrd.luks.devices = [
+    {
+      name = "root";
+      device = "/dev/sda2";
+      preLVM = true;
+      allowDiscards = true;
+    }
+  ];
 
   networking.hostName = "brh.x1cg4";
 
