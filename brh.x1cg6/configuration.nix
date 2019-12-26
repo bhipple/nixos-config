@@ -35,5 +35,11 @@ in
 
   networking.hostName = "brh.x1cg6";
 
-  services.fwupd.enable = true;
+  services = {
+    fwupd.enable = true;
+
+    jenkins = {
+      enable = true;
+    };
+  };
 }
