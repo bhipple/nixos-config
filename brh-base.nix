@@ -30,6 +30,8 @@
     opengl.driSupport32Bit = true;
     pulseaudio = {
       enable = true;
+      # Use the full package to enable Bluetooth audio support
+      package = pkgs.pulseaudioFull;
       support32Bit = true;
       systemWide = false;
     };
