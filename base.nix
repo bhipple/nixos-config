@@ -18,6 +18,8 @@
     nameservers = [ "1.1.1.1" ];
   };
 
+  nix.trustedUsers = [ "bhipple" ];
+
   nixpkgs.config.allowUnfree = true;
 
   programs.ssh = {
