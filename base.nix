@@ -43,7 +43,7 @@
   users.defaultUserShell = "/run/current-system/sw/bin/zsh";
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.extraUsers.bhipple = {
+  users.users.bhipple = {
     isNormalUser = true;
     description = "Benjamin Hipple";
     extraGroups = [ "adbusers" "bhipple" "docker" "ipfs" "networkmanager" "plugdev" "users" "wheel" ];
