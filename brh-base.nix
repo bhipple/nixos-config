@@ -54,7 +54,7 @@
   nix = {
     # Only set to true when I'm actually using the AWS build farm; otherwise, it
     # waits for a connection timeout on every build before proceeding.
-    distributedBuilds = false;
+    distributedBuilds = true;
 
     buildMachines = [
       {
@@ -64,6 +64,13 @@
         speedFactor = 2;
       }
     ];
+
+    # When using a remote builder, prefer its binary cache rather than the
+    # submitter's uploading.
+    extraOptions = ''
+      builders-use-substitutes = true
+    '';
+
     trustedUsers = [ "bhipple" ];
   };
 
