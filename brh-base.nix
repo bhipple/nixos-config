@@ -51,6 +51,22 @@
   networking.networkmanager.enable = true;
   networking.wireless.enable = false;
 
+  nix = {
+    # Only set to true when I'm actually using the AWS build farm; otherwise, it
+    # waits for a connection timeout on every build before proceeding.
+    distributedBuilds = false;
+
+    buildMachines = [
+      {
+        hostName = "werk.brhnbr.com";
+        system = "x86_64-linux";
+        maxJobs = 36;
+        speedFactor = 2;
+      }
+    ];
+    trustedUsers = [ "bhipple" ];
+  };
+
   programs.adb.enable = false;
 
   services = {
