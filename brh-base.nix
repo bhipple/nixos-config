@@ -56,7 +56,7 @@
 
     # Only set to true when I'm actually using the AWS build farm; otherwise, it
     # waits for a connection timeout on every build before proceeding.
-    distributedBuilds = false;
+    inherit (import ./distribute.nix) distributedBuilds;
 
     buildMachines = [
       {
