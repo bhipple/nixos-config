@@ -60,7 +60,7 @@
 
     buildMachines = [
       {
-        hostName = "werk.brhnbr.com";
+        hostName = "borg.brhnbr.com";
         system = "x86_64-linux";
         maxJobs = 36;
         speedFactor = 2;
