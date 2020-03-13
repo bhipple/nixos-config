@@ -24,14 +24,12 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices = [
-    {
-      name = "root";
-      device = "/dev/nvme0n1p2";
-      preLVM = true;
-      allowDiscards = true;
-    }
-  ];
+  boot.initrd.luks.devices.root = {
+    name = "root";
+    device = "/dev/nvme0n1p2";
+    preLVM = true;
+    allowDiscards = true;
+  };
 
   hardware.bluetooth.enable = true;
 

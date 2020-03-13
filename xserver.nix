@@ -10,8 +10,6 @@
 
     # Enable XMonad Configuration extras
     windowManager = {
-      default = "xmonad";
-
       xmonad = {
         enable = true;
         enableContribAndExtras = true;
@@ -21,16 +19,15 @@
       };
     };
 
-    desktopManager = {
-      default = "none";
-      xfce.enable = true;
-    };
+    displayManager = {
+      defaultSession = "none+xmonad";
 
-    displayManager.sddm = {
-      enable = true;
-      autoLogin = {
+      sddm = {
         enable = true;
-        user = "bhipple";
+        autoLogin = {
+          enable = true;
+          user = "bhipple";
+        };
       };
     };
   };
