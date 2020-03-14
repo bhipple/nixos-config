@@ -41,5 +41,7 @@ in
     jenkins = {
       enable = false;
     };
+
+    upower.enable = true;
   };
 }
