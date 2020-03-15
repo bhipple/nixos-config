@@ -77,6 +77,7 @@
   };
 
   programs.adb.enable = false;
+  programs.gnupg.agent.enable = true;
 
   services = {
     cron = {
