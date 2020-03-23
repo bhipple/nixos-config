@@ -82,10 +82,10 @@
   services = {
     cron = {
       systemCronJobs = [
-        "*/15 * * * *   bhipple  systemd-cat -t 'cron-git-sync' /home/bhipple/bin/sync-repos"
-        "0 * * * *      bhipple  systemd-cat -t 'cron-influx'   /home/bhipple/ledger/scripts/influx-personal.sh"
-        "0 22 * * 0     bhipple  systemd-cat -t 'cron-pricedb'  /home/bhipple/ledger/scripts/update-prices.sh"
-        "30 22 * * 0    bhipple  systemd-cat -t 'cron-food'     /home/bhipple/ledger/scripts/myfitnesspal-data.py"
+        "*/15 * * * *   bhipple  systemd-cat -t 'brh-cron'  /home/bhipple/bin/sync-repos"
+        "0 * * * *      bhipple  systemd-cat -t 'brh-cron'  /home/bhipple/ledger/scripts/influx-personal.sh"
+        "0 22 * * 0     bhipple  systemd-cat -t 'brh-cron'  /home/bhipple/ledger/scripts/update-prices.sh"
+        "30 22 * * 0    bhipple  systemd-cat -t 'brh-cron'  /home/bhipple/ledger/scripts/myfitnesspal-data.py"
       ];
     };
 

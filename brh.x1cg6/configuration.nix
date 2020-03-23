@@ -5,6 +5,13 @@ let
     sha256 = "1k4zl5c0ak525japzxmddimzac1szhlwd83b7i4v24a32lbwhlkz";
   };
 
+  nixpkgs-unstable = builtins.fetchTarball {
+    url = "https://github.com/NixOS/nixpkgs/archive/a36056d068770432a5203ba86e1a3accdc71aa76.tar.gz";
+    sha256 = "0j24chzb6xm1hpizd0yw24iiwnab2sy80dsxz26am6xhc0nrm9j1";
+  };
+
+  unstable-pkgs = import nixpkgs-unstable {};
+
 in
 {
   imports = [
@@ -36,7 +43,10 @@ in
   networking.hostName = "brh.x1cg6";
 
   services = {
-    fwupd.enable = true;
+    fwupd = {
+      enable = true;
+      package = unstable-pkgs.fwupd;
+    };
 
     jenkins = {
       enable = false;
