@@ -62,7 +62,7 @@
       {
         hostName = "borg.brhnbr.com";
         system = "x86_64-linux";
-        maxJobs = 36;
+        maxJobs = 16;
         speedFactor = 2;
       }
     ];
