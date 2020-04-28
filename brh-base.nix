@@ -73,6 +73,17 @@
       builders-use-substitutes = true
     '';
 
+    # Use my cachix cache
+    binaryCaches = [
+      "https://cache.nixos.org/"
+      "https://brh.cachix.org/"
+    ];
+
+    binaryCachePublicKeys = [
+      "cache.nixos.org-1:6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY="
+      "brh.cachix.org-1:EwfpYMNqGUy4alrgyBrOVhh0kGR92ZFNK8jayAJmKXA="
+    ];
+
     trustedUsers = [ "bhipple" ];
   };
 
