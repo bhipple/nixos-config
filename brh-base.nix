@@ -151,7 +151,7 @@
       SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", ATTRS{idProduct}=="0001", MODE="0660", TAG+="uaccess", TAG+="udev-acl"
       KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="plugdev", ATTRS{idVendor}=="2c97"
     ''
-    # Teensy rules for the Ergodox EZ Original / Shine / Glow
+    # Ergodox Ez Rules
     + ''
       ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", ENV{ID_MM_DEVICE_IGNORE}="1"
       ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789A]?", ENV{MTP_NO_PROBE}="1"
@@ -162,6 +162,11 @@
       SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", \
           MODE:="0666", \
           SYMLINK+="stm32_dfu"
+
+      # Oryx training rule for the Ergodox EZ Original / Shine / Glow
+      SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="1307", GROUP="plugdev"
+      # Rule for the Planck EZ Standard / Glow
+      SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="6060", GROUP="plugdev"
     '';
   };
 
@@ -172,10 +177,13 @@
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/poweroff
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/reboot
 
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl restart display-manager
+
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl restart openvpn-protonvpn
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl start openvpn-protonvpn
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl status openvpn-protonvpn
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl stop openvpn-protonvpn
+
 
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/slock
   '';
