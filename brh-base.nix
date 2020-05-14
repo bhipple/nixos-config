@@ -152,6 +152,11 @@
             location / {
               index index.html;
               autoindex on;
+
+              sendfile on;
+              tcp_nopush on;
+              tcp_nodelay on;
+              keepalive_timeout 65;
             }
           }
         }
