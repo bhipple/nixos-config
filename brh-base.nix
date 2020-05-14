@@ -101,13 +101,6 @@
       ];
     };
 
-    # TODO: Find the cleanest way to get the spacemacs config into the NixPkgs
-    # import. It doesn't have my overlay in scope at the moment.
-    # emacs = {
-    #   enable = false;
-    #   package = pkgs.spacemacs;
-    # };
-
     influxdb.enable = true;
 
     ipfs.enable = false;
