@@ -101,10 +101,6 @@
       ];
     };
 
-    influxdb.enable = true;
-
-    ipfs.enable = false;
-
     grafana = {
       enable = true;
       provision = {
@@ -139,6 +135,27 @@
           }
         ];
       };
+    };
+
+    influxdb.enable = true;
+
+    ipfs.enable = false;
+
+    nginx = {
+      enable = true;
+      config = ''
+        events { }
+        http {
+          server {
+            listen 80;
+            root /home/bhipple/public_html;
+            location / {
+              index index.html;
+              autoindex on;
+            }
+          }
+        }
+      '';
     };
 
     redshift.enable = true;
