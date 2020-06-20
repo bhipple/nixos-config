@@ -45,7 +45,7 @@ in
   services = {
     fwupd = {
       enable = true;
-      package = unstable-pkgs.fwupd;
+      #package = unstable-pkgs.fwupd;
     };
 
     jenkins = {
