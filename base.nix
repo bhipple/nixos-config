@@ -47,7 +47,7 @@
   users.users.bhipple = {
     isNormalUser = true;
     description = "Benjamin Hipple";
-    extraGroups = [ "adbusers" "audio" "bhipple" "docker" "ipfs" "networkmanager" "plugdev" "users" "wheel" ];
+    extraGroups = [ "adbusers" "bhipple" "docker" "ipfs" "networkmanager" "plugdev" "users" "wheel" ];
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINCyn5P9LSm/yfox7qrbWthnbAI2yQHoXotI/6iNE1XY"
     ];
