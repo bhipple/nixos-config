@@ -24,6 +24,10 @@
     )
   ];
 
+  nixpkgs.overlays = map import [
+    ./overlays/factorio.nix
+  ];
+
   hardware = {
     opengl.enable = true;
     opengl.driSupport = true;
@@ -34,13 +38,6 @@
       package = pkgs.pulseaudioFull;
       support32Bit = true;
       systemWide = false;
-      # See https://wiki.archlinux.org/index.php/PulseAudio/Troubleshooting#Enable_Echo/Noise-Cancellation
-      #extraConfig = ''
-        #### Enable Echo/Noise-Cancellation
-        #load-module module-echo-cancel use_master_format=1 aec_method=webrtc aec_args="analog_gain_control=0\ digital_gain_control=1\ noise_suppression=1" source_name=echoCancel_source sink_name=echoCancel_sink
-        #set-default-source echoCancel_source
-        #set-default-sink echoCancel_sink
-      #'';
     };
   };
 
@@ -170,7 +167,13 @@
       '';
     };
 
-    redshift.enable = true;
+    redshift = {
+      enable = true;
+      temperature.day = 3500;
+      temperature.night = 3500;
+      brightness.day = "1.0";
+      brightness.night = "1.0";
+    };
 
     syncthing = {
       enable = true;
