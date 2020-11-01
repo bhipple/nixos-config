@@ -8,26 +8,23 @@
     # See /etc/X11/xkb/rules/evdev.lst for more options
     xkbOptions = "caps:ctrl_modifier";
 
-    # Enable XMonad Configuration extras
     windowManager = {
-      xmonad = {
-        enable = true;
-        enableContribAndExtras = true;
-        extraPackages = haskellPackages: [
-          haskellPackages.xmobar
-        ];
+      i3.enable = true;
+    };
+
+    desktopManager = {
+      xfce = {
+        enable = false;
+        noDesktop = false;
+        enableXfwm = false;
       };
     };
 
     displayManager = {
-      defaultSession = "none+xmonad";
-
-      sddm = {
+      defaultSession = "none+i3";
+      autoLogin = {
         enable = true;
-        autoLogin = {
-          enable = true;
-          user = "bhipple";
-        };
+        user = "bhipple";
       };
     };
   };

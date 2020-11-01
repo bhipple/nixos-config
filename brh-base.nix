@@ -10,18 +10,6 @@
     wget
     xautolock
     xlibs.xmessage
-
-    (
-      haskellPackages.ghcWithPackages (
-        ps: with ps;
-        [
-          xmonad
-          xmobar
-          xmonad-contrib
-          xmonad-extras
-        ]
-      )
-    )
   ];
 
   nixpkgs.overlays = map import [
