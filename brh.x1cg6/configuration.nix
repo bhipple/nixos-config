@@ -40,7 +40,7 @@ in
 
   hardware.bluetooth.enable = true;
 
-  networking.hostName = "brh.x1cg6";
+  networking.hostName = "brh-x1cg6";
 
   services = {
     fwupd = {

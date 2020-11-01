@@ -31,7 +31,7 @@
     }
   ];
 
-  networking.hostName = "brh.x1cg4";
+  networking.hostName = "brh-x1cg4";
 
   services.monero.enable = false;
 
