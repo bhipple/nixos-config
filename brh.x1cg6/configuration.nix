@@ -10,7 +10,7 @@ let
     sha256 = "0j24chzb6xm1hpizd0yw24iiwnab2sy80dsxz26am6xhc0nrm9j1";
   };
 
-  unstable-pkgs = import nixpkgs-unstable {};
+  unstable-pkgs = import nixpkgs-unstable { };
 
 in
 {

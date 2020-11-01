@@ -38,6 +38,10 @@
       package = pkgs.pulseaudioFull;
       support32Bit = true;
       systemWide = false;
+      # Doesn't work!
+      # extraConfig = ''
+      #   load-module module-detect
+      # '';
     };
   };
 
