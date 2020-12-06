@@ -1,4 +1,5 @@
 email.nix                filter=git-crypt diff=git-crypt
+ssmtp-auth               filter=git-crypt diff=git-crypt
 grafana/**               filter=git-crypt diff=git-crypt
 hosts.nix                filter=git-crypt diff=git-crypt
 ops/**                   filter=git-crypt diff=git-crypt

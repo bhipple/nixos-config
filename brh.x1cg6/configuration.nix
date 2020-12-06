@@ -20,6 +20,7 @@ in
 
     ../base.nix
     ../brh-base.nix
+    ../email.nix
     ../hosts.nix
     ../udev.nix
     ../xserver.nix
