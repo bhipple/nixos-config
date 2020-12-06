@@ -17,6 +17,9 @@
   ];
 
   hardware = {
+    # Add udev rules for ledger nano s
+    ledger.enable = true;
+
     opengl.enable = true;
     opengl.driSupport = true;
     opengl.driSupport32Bit = true;
@@ -160,7 +163,7 @@
     };
 
     redshift = {
-      enable = true;
+      enable = false;
       temperature.day = 3500;
       temperature.night = 3500;
       brightness.day = "1.0";
@@ -174,37 +177,6 @@
       dataDir = "/home/bhipple/syncthing";
       openDefaultPorts = true;
     };
-
-    # Ledger Nano S udev rule for Chromium plugin write access
-    udev.extraRules = ''
-      SUBSYSTEMS=="usb", ATTRS{idVendor}=="2c97", ATTRS{idProduct}=="0001", MODE="0660", TAG+="uaccess", TAG+="udev-acl"
-      KERNEL=="hidraw*", SUBSYSTEM=="hidraw", MODE="0660", GROUP="plugdev", ATTRS{idVendor}=="2c97"
-    ''
-    # Ergodox Ez Rules
-    + ''
-      ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", ENV{ID_MM_DEVICE_IGNORE}="1"
-      ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789A]?", ENV{MTP_NO_PROBE}="1"
-      SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789ABCD]?", MODE:="0666"
-      KERNEL=="ttyACM*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="04[789B]?", MODE:="0666"
-
-      # STM32 rules for the Planck EZ Standard / Glow
-      SUBSYSTEMS=="usb", ATTRS{idVendor}=="0483", ATTRS{idProduct}=="df11", \
-          MODE:="0666", \
-          SYMLINK+="stm32_dfu"
-
-      # Oryx training rule for the Ergodox EZ Original / Shine / Glow
-      SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="1307", GROUP="plugdev"
-      # Rule for the Planck EZ Standard / Glow
-      SUBSYSTEM=="usb", ATTR{idVendor}=="feed", ATTR{idProduct}=="6060", GROUP="plugdev"
-    ''
-    # Talon
-    + ''
-      SUBSYSTEM=="usb", ATTRS{idVendor}=="2104", ATTRS{idProduct}=="0127", GROUP="plugdev", TAG+="uaccess"
-      SUBSYSTEM=="usb", ATTRS{idVendor}=="2104", ATTRS{idProduct}=="0118", GROUP="plugdev", TAG+="uaccess"
-      SUBSYSTEM=="usb", ATTRS{idVendor}=="2104", ATTRS{idProduct}=="0106", GROUP="plugdev", TAG+="uaccess"
-      SUBSYSTEM=="usb", ATTRS{idVendor}=="2104", ATTRS{idProduct}=="0128", GROUP="plugdev", TAG+="uaccess"
-      SUBSYSTEM=="usb", ATTRS{idVendor}=="2104", ATTRS{idProduct}=="010a", GROUP="plugdev", TAG+="uaccess"
-    '';
   };
 
   security.sudo.extraConfig = ''

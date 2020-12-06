@@ -21,6 +21,7 @@ in
     ../base.nix
     ../brh-base.nix
     ../hosts.nix
+    ../udev.nix
     ../xserver.nix
 
     # VPN
