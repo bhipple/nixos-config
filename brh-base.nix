@@ -17,9 +17,6 @@
   ];
 
   hardware = {
-    # Add udev rules for ledger nano s
-    ledger.enable = true;
-
     opengl.enable = true;
     opengl.driSupport = true;
     opengl.driSupport32Bit = true;
