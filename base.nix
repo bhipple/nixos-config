@@ -39,7 +39,7 @@
   };
 
   # The NixOS release to be compatible with for stateful data such as databases.
-  system.stateVersion = "19.09";
+  system.stateVersion = "21.05";
   time.timeZone = "America/New_York";
   users.defaultUserShell = "/run/current-system/sw/bin/zsh";
 
