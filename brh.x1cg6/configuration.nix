@@ -40,11 +40,6 @@ in
     fwupd = {
       enable = true;
     };
-
-    jenkins = {
-      enable = false;
-    };
-
     upower.enable = true;
   };
 }

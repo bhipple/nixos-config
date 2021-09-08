@@ -22,22 +22,18 @@
   boot.loader.grub.efiSupport = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices = [
-    {
-      name = "root";
-      device = "/dev/sda2";
-      preLVM = true;
-      allowDiscards = true;
-    }
-  ];
+  boot.initrd.luks.devices.root = {
+    name = "root";
+    device = "/dev/sda2";
+    preLVM = true;
+    allowDiscards = true;
+  };
 
   networking.hostName = "brh-x1cg4";
 
-  services.monero.enable = false;
-
-  virtualisation = {
-    docker.enable = true;
-    virtualbox.host.enable = false;
-    virtualbox.guest.enable = false;
+  services = {
+    fwupd = {
+      enable = true;
+    };
   };
 }
