@@ -91,51 +91,9 @@
     cron = {
       systemCronJobs = [
         "*/15 * * * *   bhipple  systemd-cat -t 'brh-cron'  /home/bhipple/bin/sync-repos"
-        "0 * * * *      bhipple  systemd-cat -t 'brh-cron'  /home/bhipple/ledger/scripts/influx-personal.sh"
         "0 22 * * 0     bhipple  systemd-cat -t 'brh-cron'  /home/bhipple/ledger/scripts/update-prices.sh"
-        "30 22 * * 0    bhipple  systemd-cat -t 'brh-cron'  /home/bhipple/ledger/scripts/myfitnesspal-data.py"
       ];
     };
-
-    grafana = {
-      enable = true;
-      provision = {
-        enable = true;
-        datasources = [
-          {
-            name = "personal";
-            type = "influxdb";
-            access = "direct";
-            url = http://localhost:8086;
-            database = "personal";
-            isDefault = true;
-          }
-          {
-            name = "brh-finance";
-            type = "influxdb";
-            access = "direct";
-            url = http://localhost:8086;
-            database = "brh-finance";
-          }
-          {
-            name = "brh-food";
-            type = "influxdb";
-            access = "direct";
-            url = http://localhost:8086;
-            database = "brh-food";
-          }
-        ];
-        dashboards = [
-          {
-            options.path = ./grafana/provisioning/dashboards;
-          }
-        ];
-      };
-    };
-
-    influxdb.enable = true;
-
-    ipfs.enable = false;
 
     nginx = {
       enable = true;
