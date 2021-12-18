@@ -38,10 +38,13 @@
     longitude = -74.00597;
   };
 
-  networking.firewall = {
+  networking.firewall = let
+    ssh = 22;
+    immersed = 21000;
+  in {
     enable = true;
-    allowedTCPPorts = [ 22 4001 8080 ];
-    allowedUDPPorts = [ 8080 34197 ];
+    allowedTCPPorts = [ ssh immersed ];
+    allowedUDPPorts = [ immersed ];
   };
 
   networking.networkmanager.enable = true;
