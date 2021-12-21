@@ -40,11 +40,11 @@
 
   networking.firewall = let
     ssh = 22;
-    immersed = 21000;
+    immersed = [ 21000 21003 21010 ];
   in {
     enable = true;
-    allowedTCPPorts = [ ssh immersed ];
-    allowedUDPPorts = [ immersed ];
+    allowedTCPPorts = [ ssh ] ++ immersed;
+    allowedUDPPorts = immersed;
   };
 
   networking.networkmanager.enable = true;
