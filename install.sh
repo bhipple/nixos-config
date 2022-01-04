@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 set -euxo pipefail
 
-DISK=$(ls -l /dev/disk/by-id/nvme-SAMSUNG* | grep -v part | awk '{print $9/d}')
 # Happens to be the 5th partition where I want to put NixOS, and the 1st partition with the fat boot disk
+DISK=$(ls -l /dev/disk/by-id/nvme-SAMSUNG* | grep -v part | awk '{print $9}')
 ZFS=$DISK-part5
 BOOT=$DISK-part1
 
