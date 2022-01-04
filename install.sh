@@ -7,7 +7,7 @@ ZFS=$DISK-part5
 BOOT=$DISK-part1
 
 # Make the encrypted zfs root pool and add a pw
-zpool create -O mountpoint=none -O encryption=aes-256-gcm -O keyformat=passphrase rpool $ZFS
+zpool create -f -O mountpoint=none -O encryption=aes-256-gcm -O keyformat=passphrase rpool $ZFS
 
 # And then the individual pools, with auto-snapshotting on /home
 zfs create -o mountpoint=none rpool/root
