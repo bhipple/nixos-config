@@ -31,3 +31,11 @@ mount $BOOT /mnt/boot
 
 # Generate the starting config, including hardware.nix
 nixos-generate-config --root /mnt
+
+cd /mnt/etc/nixos
+git init
+git remote add origin https://github.com/bhipple/nixos-config
+git fetch
+git checkout master
+
+echo "Go move configuration.nix and hardware.nix into the right subdir, and symlink it as configuration.nix in $(pwd)"
