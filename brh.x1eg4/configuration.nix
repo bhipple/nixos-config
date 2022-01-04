@@ -8,7 +8,7 @@ in
 {
   imports = [
     ./hardware-configuration.nix
-    "${nixos-hardware}/lenovo/thinkpad/x1/6th-gen"
+    #"${nixos-hardware}/lenovo/thinkpad/x1-extreme/default.nix"
 
     ../base.nix
     ../brh-base.nix
@@ -25,22 +25,25 @@ in
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.initrd.luks.devices.root = {
-    name = "root";
-    device = "/dev/nvme0n1p2";
-    preLVM = true;
-    allowDiscards = true;
-  };
+  # ZFS Settings
+  boot.supportedFilesystems = [ "zfs" ];
+  boot.zfs.requestEncryptionCredentials = true;
+
+  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
+  # Per-interface useDHCP will be mandatory in the future, so this generated config
+  # replicates the default behaviour.
+  networking.useDHCP = false;
+  networking.interfaces.enp0s13f0u3u3.useDHCP = true;
+  networking.hostId = "173f266b";
 
   hardware.bluetooth.enable = true;
 
   # See options with `man mount`
   fileSystems."/".options = [
     "noatime" # Large performance boost
-    "discard" # Send TRIM commands to the ssd
   ];
 
-  networking.hostName = "brh-x1cg6";
+  networking.hostName = "brh-x1eg4";
 
   services = {
     fwupd = {

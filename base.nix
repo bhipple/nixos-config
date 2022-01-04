@@ -1,12 +1,6 @@
 # Minimal base environment for all my Nix servers
 { pkgs, ... }:
 {
-  # See options with `man mount`
-  fileSystems."/".options = [
-    "noatime" # Large performance boost
-    "discard" # Send TRIM commands to the ssd
-  ];
-
   console = {
     font = "Lat2-Terminus16";
     keyMap = "us";

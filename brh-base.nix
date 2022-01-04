@@ -12,10 +12,6 @@
     xlibs.xmessage
   ];
 
-  nixpkgs.overlays = map import [
-    ./overlays/factorio.nix
-  ];
-
   hardware = {
     opengl.enable = true;
     opengl.driSupport = true;
