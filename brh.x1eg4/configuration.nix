@@ -36,7 +36,9 @@ in
   networking.interfaces.enp0s13f0u3u3.useDHCP = true;
   networking.hostId = "173f266b";
 
-  hardware.bluetooth.enable = true;
+  hardware.bluetooth.enable = false;
+
+  # services.xserver.videoDrivers = [ "nvidia" ];
 
   # See options with `man mount`
   fileSystems."/".options = [
@@ -46,9 +48,8 @@ in
   networking.hostName = "brh-x1eg4";
 
   services = {
-    fwupd = {
-      enable = true;
-    };
+    fwupd.enable = true;
+    hardware.bolt.enable = true;
     upower.enable = true;
   };
 }
