@@ -42,10 +42,6 @@ in
 
   networking.hostName = "brh-x1cg6";
 
-  services = {
-    fwupd = {
-      enable = true;
-    };
-    upower.enable = true;
-  };
+  services.upower.enable = true;
+  services.hardware.bolt.enable = true;
 }

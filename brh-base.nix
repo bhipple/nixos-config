@@ -7,6 +7,7 @@
     gitAndTools.gitFull
     ipfs
     slock
+    tmux
     wget
     xautolock
     xlibs.xmessage
@@ -92,6 +93,10 @@
         "*/15 * * * *   bhipple  systemd-cat -t 'brh-cron'  /home/bhipple/bin/sync-repos"
         "0 22 * * 0     bhipple  systemd-cat -t 'brh-cron'  /home/bhipple/ledger/scripts/update-prices.sh"
       ];
+    };
+
+    fwupd = {
+      enable = true;
     };
 
     nginx = {
