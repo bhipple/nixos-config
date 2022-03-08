@@ -7,6 +7,7 @@
 
     ../base.nix
     ../brh-base.nix
+    ../cron.nix
     ../hosts.nix
     ../xserver.nix
 
