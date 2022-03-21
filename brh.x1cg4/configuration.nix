@@ -9,6 +9,7 @@
     ../brh-base.nix
     ../cron.nix
     ../hosts.nix
+    ../udev.nix
     ../xserver.nix
 
     # VPN
