@@ -132,6 +132,7 @@
   security.sudo.extraConfig = ''
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/nix-channel --update
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/nix-store --optimize
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
 
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/bluetoothctl
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/poweroff
