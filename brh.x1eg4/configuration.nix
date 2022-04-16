@@ -12,8 +12,10 @@ in
 
     ../base.nix
     ../brh-base.nix
+    ../cron.nix
     ../email.nix
     ../hosts.nix
+    ../sudo.nix
     ../udev.nix
     ../xserver.nix
 
