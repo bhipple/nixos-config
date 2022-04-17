@@ -36,12 +36,12 @@
   };
 
   networking.firewall = let
-    ssh = 22;
-    immersed = [ 21000 21003 21010 ];
+    ssh = [ 22 ];
+    wireguard = [ 51820 ];
   in {
     enable = true;
-    allowedTCPPorts = [ ssh ] ++ immersed;
-    allowedUDPPorts = immersed;
+    allowedTCPPorts = ssh;
+    allowedUDPPorts = wireguard;
   };
 
   networking.networkmanager.enable = true;

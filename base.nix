@@ -11,10 +11,6 @@
     defaultLocale = "en_US.UTF-8";
   };
 
-  networking = {
-    nameservers = [ "1.1.1.1" ];
-  };
-
   nixpkgs.config.allowUnfree = true;
 
   programs.ssh = {
