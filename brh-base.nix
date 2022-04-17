@@ -44,9 +44,6 @@
     allowedUDPPorts = wireguard;
   };
 
-  networking.networkmanager.enable = true;
-  networking.wireless.enable = false;
-
   nix = {
     autoOptimiseStore = true;
 
