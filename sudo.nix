@@ -1,4 +1,24 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
+
+let
+  services = [
+    "openvpn-protonvpn"
+    "bluetooth"
+    "display-manager"
+  ];
+
+  systemctl = lib.concatMapStrings (s: ''
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl restart ${s}
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl start ${s}
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl status ${s}
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl stop ${s}
+  '') services;
+
+  journalctl = lib.concatMapStrings (s: ''
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/journalctl -u ${s}
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/journalctl -u ${s} *
+  '') services;
+in
 {
   security.sudo.extraConfig = ''
     # Nix
@@ -12,12 +32,8 @@
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/reboot
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/slock
 
-    # Systemctl
-    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl restart bluetooth
-    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl restart display-manager
-    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl restart openvpn-protonvpn
-    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl start openvpn-protonvpn
-    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl status openvpn-protonvpn
-    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/systemctl stop openvpn-protonvpn
+    # systemd
+    ${systemctl}
+    ${journalctl}
   '';
 }
