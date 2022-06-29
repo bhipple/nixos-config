@@ -15,6 +15,10 @@
     nameservers = [ "1.1.1.1" ];
   };
 
+  nix.settings = {
+    experimental-features = "nix-command flakes";
+  };
+
   nixpkgs.config.allowUnfree = true;
 
   programs.ssh = {
@@ -41,7 +45,7 @@
   users.users.bhipple = {
     isNormalUser = true;
     description = "Benjamin Hipple";
-    extraGroups = [ "adbusers" "bhipple" "docker" "ipfs" "networkmanager" "plugdev" "users" "wheel" ];
+    extraGroups = [ "adbusers" "bhipple" "docker" "networkmanager" "plugdev" "users" "wheel" ];
     openssh.authorizedKeys.keys = [
       # brh-key
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINCyn5P9LSm/yfox7qrbWthnbAI2yQHoXotI/6iNE1XY"

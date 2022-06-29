@@ -5,12 +5,11 @@
   environment.systemPackages = with pkgs; [
     dmenu
     gitAndTools.gitFull
-    ipfs
     slock
     tmux
     wget
     xautolock
-    xlibs.xmessage
+    xorg.xmessage
   ];
 
   hardware = {
