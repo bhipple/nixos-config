@@ -12,7 +12,7 @@
   };
 
   networking = {
-    nameservers = [ "1.1.1.1" ];
+    nameservers = [ "9.9.9.9" ];
   };
 
   nix.settings = {
