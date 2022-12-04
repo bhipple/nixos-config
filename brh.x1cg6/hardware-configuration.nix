@@ -26,6 +26,6 @@
     { device = "/dev/disk/by-uuid/654b9e01-c22c-4ded-a25e-50e791cd6f12"; }
   ];
 
-  nix.maxJobs = lib.mkDefault 8;
+  nix.settings.max-jobs = lib.mkDefault 8;
   powerManagement.cpuFreqGovernor = "powersave";
 }
