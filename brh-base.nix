@@ -99,14 +99,6 @@
       '';
     };
 
-    redshift = {
-      enable = false;
-      temperature.day = 3500;
-      temperature.night = 3500;
-      brightness.day = "1.0";
-      brightness.night = "1.0";
-    };
-
     syncthing = {
       enable = true;
       user = "bhipple";
