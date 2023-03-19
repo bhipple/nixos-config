@@ -2,9 +2,5 @@
 
 {
   services.cron.enable = true;
-  services.cron.systemCronJobs = [
-    "*/15 *  * * *   bhipple  systemd-cat -t 'brh-cron'  /home/bhipple/bin/sync-repos"
-    "0    *  * * *   bhipple  systemd-cat -t 'brh-cron'  cd /home/bhipple/git/nixpkgs && git fetch --all && git pull"
-    "0    20 * * 0   bhipple  systemd-cat -t 'brh-cron'  /home/bhipple/ledger/scripts/update-prices.sh"
-  ];
+  services.cron.systemCronJobs = [];
 }
