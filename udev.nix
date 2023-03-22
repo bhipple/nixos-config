@@ -15,7 +15,6 @@
   # QMK
   # https://github.com/qmk/qmk_firmware/blob/master/util/udev/50-qmk.rules
   + ''
-    # Atmel DFU
     ### ATmega16U2
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2fef", TAG+="uaccess"
     ### ATmega32U2
@@ -45,11 +44,17 @@
     # USBAspLoader
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="05dc", TAG+="uaccess"
 
+    # USBtinyISP
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="1782", ATTRS{idProduct}=="0c9f", TAG+="uaccess"
+
     # ModemManager should ignore the following devices
     # Atmel SAM-BA (Massdrop)
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="6124", TAG+="uaccess", ENV{ID_MM_DEVICE_IGNORE}="1"
 
     # Caterina (Pro Micro)
+    ## pid.codes shared PID
+    ### Keyboardio Atreus 2 Bootloader
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="2302", TAG+="uaccess", ENV{ID_MM_DEVICE_IGNORE}="1"
     ## Spark Fun Electronics
     ### Pro Micro 3V3/8MHz
     SUBSYSTEMS=="usb", ATTRS{idVendor}=="1b4f", ATTRS{idProduct}=="9203", TAG+="uaccess", ENV{ID_MM_DEVICE_IGNORE}="1"
@@ -80,5 +85,20 @@
 
     # hid_listen
     KERNEL=="hidraw*", MODE="0660", GROUP="plugdev", TAG+="uaccess", TAG+="udev-acl"
+
+    # hid bootloaders
+    ## QMK HID
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="03eb", ATTRS{idProduct}=="2067", TAG+="uaccess"
+    ## PJRC's HalfKay
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="0478", TAG+="uaccess"
+
+    # APM32 DFU
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="314b", ATTRS{idProduct}=="0106", TAG+="uaccess"
+
+    # GD32V DFU
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="28e9", ATTRS{idProduct}=="0189", TAG+="uaccess"
+
+    # WB32 DFU
+    SUBSYSTEMS=="usb", ATTRS{idVendor}=="342d", ATTRS{idProduct}=="dfa0", TAG+="uaccess"
   '';
 }
