@@ -4,9 +4,12 @@
   # System profile packages
   environment.systemPackages = with pkgs; [
     dmenu
+    git
     gitAndTools.gitFull
+    python3
     slock
     tmux
+    vim
     wget
     xautolock
     xorg.xmessage
@@ -41,9 +44,6 @@
   networking.wireless.enable = false;
 
   nix = {
-
-    # Only set to true when I'm actually using the AWS build farm; otherwise, it
-    # waits for a connection timeout on every build before proceeding.
     inherit (import ./distribute.nix) distributedBuilds;
 
     buildMachines = [
