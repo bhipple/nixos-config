@@ -35,10 +35,8 @@ in
     "/crypto_keyfile.bin" = null;
   };
 
-
   hardware.bluetooth.enable = false;
 
-#services.xserver.videoDrivers = [ "nouveau" ];
   nixpkgs.config.allowUnfree = true;
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.opengl.enable = true;
@@ -46,11 +44,6 @@ in
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
 
   hardware.nvidia.modesetting.enable = true;
-
-  #hardware.nvidia.open = true;
-
-  #boot.blacklistedKernelModules = [ "nouveau" ];
-  #boot.kernelParams = ["nomodeset" ];
 
   # See options with `man mount`
   fileSystems."/".options = [

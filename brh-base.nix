@@ -6,6 +6,7 @@
     dmenu
     git
     gitAndTools.gitFull
+    pinentry-curses
     python3
     slock
     tmux
@@ -69,7 +70,10 @@
   };
 
   programs.adb.enable = false;
-  programs.gnupg.agent.enable = true;
+  programs.gnupg.agent = {
+    enable = true;
+    pinentryFlavor = "curses";
+  };
   programs.dconf.enable = true;
 
   services = {
