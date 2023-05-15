@@ -23,6 +23,8 @@ in
     #../vpn.nix
   ];
 
+  networking.hostName = "brh-dale";
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -33,27 +35,27 @@ in
     "/crypto_keyfile.bin" = null;
   };
 
-  # The global useDHCP flag is deprecated, therefore explicitly set to false here.
-  # Per-interface useDHCP will be mandatory in the future, so this generated config
-  # replicates the default behaviour.
-  networking.useDHCP = false;
-  networking.interfaces.enp0s13f0u3u3.useDHCP = true;
-  networking.hostId = "173f266b";
 
   hardware.bluetooth.enable = false;
 
-  # services.xserver.videoDrivers = [ "nvidia" ];
+#services.xserver.videoDrivers = [ "nouveau" ];
+  nixpkgs.config.allowUnfree = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.opengl.enable = true;
+
+  hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+  hardware.nvidia.modesetting.enable = true;
+
+  #hardware.nvidia.open = true;
+
+  #boot.blacklistedKernelModules = [ "nouveau" ];
+  #boot.kernelParams = ["nomodeset" ];
 
   # See options with `man mount`
   fileSystems."/".options = [
     "noatime" # Large performance boost
   ];
-
-  networking.hostName = "brh-dale";
-
-  services = {
-    upower.enable = true;
-  };
 
   # Enable sound with pipewire.
   # sound.enable = true;
