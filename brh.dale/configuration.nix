@@ -8,19 +8,18 @@ in
 {
   imports = [
     ./hardware-configuration.nix
-    #"${nixos-hardware}/lenovo/thinkpad/x1-extreme/default.nix"
 
     ../base.nix
     ../brh-base.nix
     ../cron.nix
-    #../email.nix
-    #../hosts.nix
+    ../email.nix
+    ../hosts.nix
     ../sudo.nix
     ../udev.nix
     ../xserver.nix
 
     # VPN
-    #../vpn.nix
+    ../vpn.nix
   ];
 
   networking.hostName = "brh-dale";
