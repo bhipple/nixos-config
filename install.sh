@@ -23,7 +23,7 @@ mkdir /mnt/home
 mount -t zfs rpool/home /mnt/home
 
 # Create filesystem for boot partition
-#mkfs.vfat $BOOT
+mkfs.vfat $BOOT
 
 # Create directory and mount boot partition
 mkdir /mnt/boot
