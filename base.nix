@@ -32,8 +32,10 @@
 
   services.openssh = {
     enable = true;
-    passwordAuthentication = false;
-    forwardX11 = false;
+    settings = {
+      X11Forwarding = true;
+      PasswordAuthentication = false;
+    };
   };
 
   # The NixOS release to be compatible with for stateful data such as databases.
