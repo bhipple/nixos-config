@@ -34,7 +34,7 @@ in
     "/crypto_keyfile.bin" = null;
   };
 
-  hardware.bluetooth.enable = false;
+  hardware.bluetooth.enable = true;
 
   nixpkgs.config.allowUnfree = true;
   services.xserver.videoDrivers = [ "nvidia" ];
