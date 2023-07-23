@@ -33,22 +33,16 @@
   networking.firewall =
     let
       ssh = 22;
-      speedify = 24;
       immersed = [ 21000 21003 21010 ];
     in
     {
       enable = true;
-      allowedTCPPorts = [ ssh speedify ] ++ immersed;
-      allowedUDPPorts = [ speedify] ++ immersed;
+      allowedTCPPorts = [ ssh ] ++ immersed;
+      allowedUDPPorts = immersed;
     };
 
   networking.networkmanager.enable = true;
   networking.wireless.enable = false;
-
-  security.pki.certificateFiles = [
-    "${pkgs.cacert}/etc/ssl/certs/ca-bundle.crt"
-    "${./speedify/cacert.pem}"
-  ];
 
   nix = {
     inherit (import ./distribute.nix) distributedBuilds;
