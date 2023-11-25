@@ -4,6 +4,7 @@
   # System profile packages
   environment.systemPackages = with pkgs; [
     brave
+    chromium
     dmenu
     git
     gitAndTools.gitFull
