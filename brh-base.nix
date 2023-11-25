@@ -3,6 +3,7 @@
 {
   # System profile packages
   environment.systemPackages = with pkgs; [
+    brave
     dmenu
     git
     gitAndTools.gitFull
