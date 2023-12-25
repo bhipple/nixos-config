@@ -79,6 +79,8 @@
   programs.dconf.enable = true;
 
   services = {
+    blueman.enable = true;
+
     fwupd.enable = true;
 
     gnome.gnome-keyring.enable = true;
