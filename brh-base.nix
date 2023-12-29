@@ -81,8 +81,6 @@
   services = {
     blueman.enable = true;
 
-    clight.enable = true;
-
     fwupd.enable = true;
 
     gnome.gnome-keyring.enable = true;
