@@ -8,6 +8,8 @@
     dmenu
     git
     gitAndTools.gitFull
+    gnupg
+    pass
     pinentry-curses
     python3
     slock
@@ -72,11 +74,12 @@
   };
 
   programs.adb.enable = false;
+  programs.browserpass.enable = true;
+  programs.dconf.enable = true;
   programs.gnupg.agent = {
     enable = true;
     pinentryFlavor = "curses";
   };
-  programs.dconf.enable = true;
 
   services = {
     blueman.enable = true;
