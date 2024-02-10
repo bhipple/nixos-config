@@ -38,11 +38,12 @@
     let
       ssh = 22;
       immersed = [ 21000 21003 21010 ];
+      wg = [ 51820 ];
     in
     {
       enable = true;
-      allowedTCPPorts = [ ssh ] ++ immersed;
-      allowedUDPPorts = immersed;
+      allowedTCPPorts = [ ssh ] ++ wg ++ immersed;
+      allowedUDPPorts = wg ++ immersed;
     };
 
   networking.networkmanager.enable = true;
