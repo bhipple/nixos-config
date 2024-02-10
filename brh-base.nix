@@ -49,24 +49,6 @@
   networking.wireless.enable = false;
 
   nix = {
-    inherit (import ./distribute.nix) distributedBuilds;
-
-    buildMachines = [
-      {
-        hostName = "borg.brhnbr.com";
-        system = "x86_64-linux";
-        maxJobs = 16;
-        speedFactor = 2;
-        supportedFeatures = [ "big-parallel" ];
-      }
-    ];
-
-    # When using a remote builder, prefer its binary cache rather than the
-    # submitter's uploading.
-    extraOptions = ''
-      builders-use-substitutes = true
-    '';
-
     settings = {
       auto-optimise-store = true;
       trusted-users = [ "bhipple" ];
