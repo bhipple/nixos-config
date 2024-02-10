@@ -14,7 +14,7 @@
     ../xserver.nix
 
     # VPN
-    ../vpn.nix
+    ../vpn/vpn.nix
   ];
 
   boot.kernelParams = [ "intel_pstate=no_hwp" ];

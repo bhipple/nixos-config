@@ -20,7 +20,7 @@ in
     ../xserver.nix
 
     # VPN
-    ../vpn.nix
+    ../vpn/vpn.nix
   ];
 
   # Use the systemd-boot EFI boot loader.

@@ -19,7 +19,7 @@ in
     ../xserver.nix
 
     # VPN
-    ../vpn.nix
+    ../vpn/vpn.nix
   ];
 
   networking.hostName = "brh-dale";

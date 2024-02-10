@@ -4,4 +4,4 @@ hosts.nix                filter=git-crypt diff=git-crypt
 ops/**                   filter=git-crypt diff=git-crypt
 overlays/factorio.nix    filter=git-crypt diff=git-crypt
 ssmtp-auth               filter=git-crypt diff=git-crypt
-vpn.nix                  filter=git-crypt diff=git-crypt
+vpn/**                   filter=git-crypt diff=git-crypt
