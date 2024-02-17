@@ -2,9 +2,10 @@
 
 let
   services = [
-    "openvpn-protonvpn"
     "bluetooth"
     "display-manager"
+    "openvpn-protonvpn"
+    "wg-quick-protonvpn.service"
   ];
 
   systemctl = lib.concatMapStrings (s: ''
