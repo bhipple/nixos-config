@@ -11,9 +11,9 @@
     defaultLocale = "en_US.UTF-8";
   };
 
-  networking = {
-    nameservers = [ "9.9.9.9" ];
-  };
+  # networking = {
+  #   nameservers = [ "9.9.9.9" ];
+  # };
 
   nix.settings = {
     experimental-features = "nix-command flakes";
