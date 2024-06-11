@@ -36,14 +36,13 @@
 
   networking.firewall =
     let
-      ssh = 22;
-      immersed = [ 21000 21003 21010 ];
+      ssh = [ 22 ];
       wg = [ 51820 ];
     in
     {
       enable = true;
-      allowedTCPPorts = [ ssh ] ++ wg ++ immersed;
-      allowedUDPPorts = wg ++ immersed;
+      allowedTCPPorts = ssh ++ wg;
+      allowedUDPPorts = wg;
     };
 
   networking.networkmanager.enable = true;
@@ -64,12 +63,21 @@
   };
 
   services = {
+    avahi = {
+      enable = true;
+      nssmdns = true;
+      publish = {
+        enable = true;
+        addresses = true;
+        domain = true;
+        hinfo = true;
+        userServices = true;
+        workstation = true;
+      };
+    };
     blueman.enable = true;
-
     fwupd.enable = true;
-
     gnome.gnome-keyring.enable = true;
-
     nginx = {
       enable = true;
       config = ''
@@ -91,7 +99,6 @@
         }
       '';
     };
-
     syncthing = {
       enable = true;
       user = "bhipple";
