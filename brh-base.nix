@@ -106,6 +106,7 @@
       dataDir = "/home/bhipple/syncthing";
       openDefaultPorts = true;
     };
+    tailscale.enable = true;
   };
 
   users.extraGroups = {
