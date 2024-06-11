@@ -2,9 +2,9 @@
 
 let
   services = [
-    "bluetooth"
-    "display-manager"
-    "openvpn-protonvpn"
+    "bluetooth.service"
+    "display-manager.service"
+    "tailscale.service"
     "wg-quick-protonvpn.service"
   ];
 
