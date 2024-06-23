@@ -113,6 +113,6 @@
     plugdev = { gid = 500; };
   };
 
-  virtualisation.docker.enable = false;
+  virtualisation.docker.enable = true;
 
 }

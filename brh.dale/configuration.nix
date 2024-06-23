@@ -52,8 +52,9 @@ in
   hardware.opengl.enable = true;
 
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.latest;
-
   hardware.nvidia.modesetting.enable = true;
+
+  hardware.nvidia-container-toolkit.enable = true; # for ollama
 
   # See options with `man mount`
   fileSystems."/".options = [
