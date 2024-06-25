@@ -54,7 +54,10 @@ in
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.latest;
   hardware.nvidia.modesetting.enable = true;
 
-  hardware.nvidia-container-toolkit.enable = true; # for ollama
+  services.ollama = {
+    enable = true;
+    acceleration = "cuda";
+  };
 
   # See options with `man mount`
   fileSystems."/".options = [
