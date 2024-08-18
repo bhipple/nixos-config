@@ -55,12 +55,12 @@
     };
   };
 
-  programs.adb.enable = false;
   programs.browserpass.enable = true;
   programs.dconf.enable = true;
   programs.gnupg.agent = {
     enable = true;
   };
+  programs.noisetorch.enable = true;
 
   services = {
     avahi = {
