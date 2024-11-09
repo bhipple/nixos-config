@@ -78,6 +78,44 @@
     blueman.enable = true;
     fwupd.enable = true;
     gnome.gnome-keyring.enable = true;
+    grafana = {
+      enable = true;
+      provision = {
+        enable = true;
+        datasources = [
+          {
+            name = "personal";
+            type = "influxdb";
+            access = "direct";
+            url = http://localhost:8086;
+            database = "personal";
+            isDefault = true;
+          }
+          {
+            name = "brh-finance";
+            type = "influxdb";
+            access = "direct";
+            url = http://localhost:8086;
+            database = "brh-finance";
+          }
+          {
+            name = "brh-food";
+            type = "influxdb";
+            access = "direct";
+            url = http://localhost:8086;
+            database = "brh-food";
+          }
+        ];
+        dashboards = [
+          {
+            options.path = ./grafana/provisioning/dashboards;
+          }
+        ];
+      };
+    };
+
+    influxdb.enable = true;
+
     nginx = {
       enable = true;
       config = ''
