@@ -6,7 +6,6 @@
     brave
     chromium
     dmenu
-    git
     gitAndTools.gitFull
     gnupg
     pass
@@ -78,27 +77,29 @@
     blueman.enable = true;
     fwupd.enable = true;
     gnome.gnome-keyring.enable = true;
+
     grafana = {
       enable = true;
+      settings = {};
       provision = {
         enable = true;
-        datasources = [
-          {
-            name = "brh-finance";
-            type = "influxdb";
-            access = "direct";
-            url = http://localhost:8086;
-            database = "brh-finance";
-          }
-        ];
-        dashboards = [
-          {
-            options.path = ./grafana/provisioning/dashboards;
-          }
-        ];
+        #datasources = [
+        #  {
+        #    name = "brh-finance";
+        #    type = "influxdb";
+        #    access = "direct";
+        #    url = http://localhost:8086;
+        #    database = "brh-finance";
+        #  }
+        #];
+        dashboards.path = ./grafana/provisioning/dashboards;
       };
+
+      # Not available until 24.11
+      # declarativePlugins = [ pkgs.grafanaPlugins.yesoreyeram-infinity-datasource ];
     };
 
+    # Replace this with csv; it's too complicated
     influxdb.enable = true;
 
     nginx = {
