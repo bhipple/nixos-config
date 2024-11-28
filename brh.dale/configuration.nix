@@ -42,15 +42,11 @@ in
       Enable = "Source,Sink,Media,Socket";
     };
   };
-  hardware.pulseaudio = {
-    enable = true;
-    package = pkgs.pulseaudioFull;
-  };
 
   nixpkgs.config.allowUnfree = true;
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.opengl.enable = true;
 
+  hardware.nvidia.open = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.latest;
   hardware.nvidia.modesetting.enable = true;
 

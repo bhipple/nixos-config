@@ -19,14 +19,7 @@
     xorg.xmessage
   ];
 
-  hardware = {
-    opengl.enable = true;
-    opengl.driSupport = true;
-    opengl.driSupport32Bit = true;
-    pulseaudio = {
-      enable = true;
-    };
-  };
+  hardware.graphics.enable = true;
 
   location = {
     latitude = 40.71427;
@@ -59,7 +52,6 @@
   programs.gnupg.agent = {
     enable = true;
   };
-  programs.noisetorch.enable = true;
 
   services = {
     avahi = {
