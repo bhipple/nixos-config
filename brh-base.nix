@@ -53,6 +53,8 @@
     enable = true;
   };
 
+  security.rtkit.enable = true;  # for pipewire, per recommendation
+
   services = {
     avahi = {
       enable = true;
@@ -86,9 +88,7 @@
         #];
         dashboards.path = ./grafana/provisioning/dashboards;
       };
-
-      # Not available until 24.11
-      # declarativePlugins = [ pkgs.grafanaPlugins.yesoreyeram-infinity-datasource ];
+      declarativePlugins = [ pkgs.grafanaPlugins.yesoreyeram-infinity-datasource ];
     };
 
     # Replace this with csv; it's too complicated
@@ -115,6 +115,17 @@
         }
       '';
     };
+
+    # https://nixos.wiki/wiki/PipeWire
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      # If you want to use JACK applications, uncomment this
+      #jack.enable = true;
+    };
+
     syncthing = {
       enable = true;
       user = "bhipple";
