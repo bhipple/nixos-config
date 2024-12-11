@@ -52,6 +52,7 @@
   programs.gnupg.agent = {
     enable = true;
   };
+  programs.steam.enable = true;
 
   security.rtkit.enable = true;  # for pipewire, per recommendation
 
