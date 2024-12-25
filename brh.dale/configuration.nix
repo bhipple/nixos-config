@@ -1,10 +1,4 @@
 { config, pkgs, ... }:
-let
-  nixos-hardware = builtins.fetchTarball {
-    url = "https://github.com/NixOS/nixos-hardware/archive/518b9c2159e7d4b7696ee18b8828f9086012923b.tar.gz";
-    sha256 = "02ybg89zj8x3i5xd70rysizbzx8d8bijml7l62n32i991244rf4b";
-  };
-in
 {
   imports = [
     ./hardware-configuration.nix
