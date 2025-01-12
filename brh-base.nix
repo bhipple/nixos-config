@@ -73,29 +73,7 @@
     fwupd.enable = true;
     gnome.gnome-keyring.enable = true;
 
-    grafana = {
-      enable = true;
-      settings = {};
-      provision = {
-        enable = true;
-        #datasources = [
-        #  {
-        #    name = "brh-finance";
-        #    type = "influxdb";
-        #    access = "direct";
-        #    url = http://localhost:8086;
-        #    database = "brh-finance";
-        #  }
-        #];
-        dashboards.path = ./grafana/provisioning/dashboards;
-      };
-      declarativePlugins = [ pkgs.grafanaPlugins.yesoreyeram-infinity-datasource ];
-    };
-
     hardware.bolt.enable = true;
-
-    # Replace this with csv; it's too complicated
-    influxdb.enable = true;
 
     nginx = {
       enable = true;
