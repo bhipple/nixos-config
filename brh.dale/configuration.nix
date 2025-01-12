@@ -63,7 +63,7 @@
       #    database = "brh-finance";
       #  }
       #];
-      dashboards.path = ./grafana/provisioning/dashboards;
+      dashboards.path = ../grafana/provisioning/dashboards;
     };
     declarativePlugins = [ pkgs.grafanaPlugins.yesoreyeram-infinity-datasource ];
   };
