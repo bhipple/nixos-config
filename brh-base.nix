@@ -19,6 +19,12 @@
     xorg.xmessage
   ];
 
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = false;
+    channel = "https://channels.nixos.org/nixos-24.11";
+  };
+
   hardware.graphics.enable = true;
 
   location = {
