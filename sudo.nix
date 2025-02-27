@@ -24,6 +24,7 @@ in
   security.sudo.extraConfig = ''
     # Nix
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/nix-channel --update
+    bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/nix-collect-garbage -d
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/nix-store --optimize
     bhipple ALL = (root) NOPASSWD: /run/current-system/sw/bin/nixos-rebuild
 
