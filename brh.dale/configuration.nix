@@ -49,24 +49,24 @@
     acceleration = "cuda";
   };
 
-  services.grafana = {
-    enable = true;
-    settings = {};
-    provision = {
-      enable = true;
-      #datasources = [
-      #  {
-      #    name = "brh-finance";
-      #    type = "influxdb";
-      #    access = "direct";
-      #    url = http://localhost:8086;
-      #    database = "brh-finance";
-      #  }
-      #];
-      dashboards.path = ../grafana/provisioning/dashboards;
-    };
-    declarativePlugins = [ pkgs.grafanaPlugins.yesoreyeram-infinity-datasource ];
-  };
+  #services.grafana = {
+  #  enable = true;
+  #  settings = {};
+  #  provision = {
+  #    enable = true;
+  #    #datasources = [
+  #    #  {
+  #    #    name = "brh-finance";
+  #    #    type = "influxdb";
+  #    #    access = "direct";
+  #    #    url = http://localhost:8086;
+  #    #    database = "brh-finance";
+  #    #  }
+  #    #];
+  #    dashboards.path = ../grafana/provisioning/dashboards;
+  #  };
+  #  declarativePlugins = [ pkgs.grafanaPlugins.yesoreyeram-infinity-datasource ];
+  #};
 
   # Replace this with csv; it's too complicated
   services.influxdb.enable = true;
