@@ -121,7 +121,7 @@
       openDefaultPorts = true;
     };
     tailscale = {
-      enable = true;
+      enable = false;
       useRoutingFeatures = "both";
       extraUpFlags = ["--advertise-exit-node"];
     };
@@ -130,7 +130,4 @@
   users.extraGroups = {
     plugdev = { gid = 500; };
   };
-
-  virtualisation.docker.enable = true;
-
 }

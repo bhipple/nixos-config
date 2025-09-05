@@ -45,7 +45,7 @@
   hardware.nvidia.modesetting.enable = true;
 
   services.ollama = {
-    enable = true;
+    enable = false;
     acceleration = "cuda";
   };
 
