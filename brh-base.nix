@@ -121,7 +121,7 @@
       openDefaultPorts = true;
     };
     tailscale = {
-      enable = false;
+      enable = true;
       useRoutingFeatures = "both";
       extraUpFlags = ["--advertise-exit-node"];
     };
