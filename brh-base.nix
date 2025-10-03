@@ -124,4 +124,7 @@
   users.extraGroups = {
     plugdev = { gid = 500; };
   };
+
+  virtualisation.docker.enable = true;
+
 }
