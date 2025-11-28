@@ -22,18 +22,7 @@
   networking.networkmanager.enable = true;
   networking.wireless.enable = false;
 
-  nix = {
-    settings = {
-      auto-optimise-store = true;
-      trusted-users = [ "bhipple" ];
-    };
-  };
-
-  programs.browserpass.enable = true;
   programs.dconf.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-  };
   programs.steam.enable = true;
 
   security.rtkit.enable = true;  # for pipewire, per recommendation

@@ -31,11 +31,21 @@
     defaultLocale = "en_US.UTF-8";
   };
 
-  nix.settings = {
-    experimental-features = "nix-command flakes";
+  nix = {
+    settings = {
+      auto-optimise-store = true;
+      experimental-features = "nix-command flakes";
+      trusted-users = [ "bhipple" ];
+    };
   };
 
   nixpkgs.config.allowUnfree = true;
+
+  programs.browserpass.enable = true;
+
+  programs.gnupg.agent = {
+    enable = true;
+  };
 
   programs.ssh = {
     startAgent = true;
