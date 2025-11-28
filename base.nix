@@ -6,14 +6,30 @@
     keyMap = "us";
   };
 
+  # System profile packages
+  environment.systemPackages = with pkgs; [
+    brave
+    chromium
+    dmenu
+    gitAndTools.gitFull
+    gnupg
+    pass
+    pinentry-curses
+    python3
+    slock
+    tmux
+    vim
+    wget
+    xautolock
+    xorg.xmessage
+    zellij
+    zsh
+  ];
+
   # Select internationalisation properties.
   i18n = {
     defaultLocale = "en_US.UTF-8";
   };
-
-  # networking = {
-  #   nameservers = [ "9.9.9.9" ];
-  # };
 
   nix.settings = {
     experimental-features = "nix-command flakes";
@@ -39,7 +55,6 @@
   };
 
   # The NixOS release to be compatible with for stateful data such as databases.
-  system.stateVersion = "21.05";
   time.timeZone = "America/New_York";
   users.defaultUserShell = "/run/current-system/sw/bin/zsh";
 

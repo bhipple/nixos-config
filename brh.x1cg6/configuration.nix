@@ -46,4 +46,7 @@ in
 
   services.upower.enable = true;
   services.hardware.bolt.enable = true;
+
+  system.stateVersion = "25.05";
+
 }

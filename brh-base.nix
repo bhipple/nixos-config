@@ -1,24 +1,6 @@
 # Base defaults for my personal machines
 { pkgs, ... }:
 {
-  # System profile packages
-  environment.systemPackages = with pkgs; [
-    brave
-    chromium
-    dmenu
-    gitAndTools.gitFull
-    gnupg
-    pass
-    pinentry-curses
-    python3
-    slock
-    tmux
-    vim
-    wget
-    xautolock
-    xorg.xmessage
-  ];
-
   hardware.graphics.enable = true;
 
   location = {

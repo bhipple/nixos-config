@@ -71,6 +71,8 @@
   # Replace this with csv; it's too complicated
   services.influxdb.enable = true;
 
+  system.stateVersion = "25.05";
+
   # See options with `man mount`
   fileSystems."/".options = [
     "noatime" # Large performance boost

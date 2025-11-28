@@ -53,4 +53,7 @@ in
     hardware.bolt.enable = true;
     upower.enable = true;
   };
+
+  system.stateVersion = "25.05";
+
 }

@@ -34,4 +34,7 @@
   networking.hostName = "brh-x1cg4";
 
   services.upower.enable = true;
+
+  system.stateVersion = "25.05";
+
 }

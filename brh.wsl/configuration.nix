@@ -5,27 +5,9 @@
   imports = [
     # include NixOS-WSL modules
     <nixos-wsl/modules>
-  ];
 
-  environment.systemPackages = with pkgs; [
-    brave
-    chromium
-    dmenu
-    gitAndTools.gitFull
-    gnupg
-    pass
-    pinentry-curses
-    python3
-    slock
-    vim
-    wget
-    xautolock
-    xorg.xmessage
-    zellij
-    zsh
+    ../base.nix
   ];
-
-  nix.settings.experimental-features = "nix-command flakes";
 
   wsl.enable = true;
   wsl.defaultUser = "bhipple";
