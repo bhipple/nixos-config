@@ -41,8 +41,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  programs.browserpass.enable = true;
-
   programs.gnupg.agent = {
     enable = true;
   };
