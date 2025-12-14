@@ -11,7 +11,7 @@
     brave
     chromium
     dmenu
-    gitAndTools.gitFull
+    git
     gnupg
     pass
     pinentry-curses
@@ -43,11 +43,6 @@
 
   programs.gnupg.agent = {
     enable = true;
-  };
-
-  programs.ssh = {
-    startAgent = true;
-    agentTimeout = "10h";
   };
 
   programs.zsh.enable = true;
