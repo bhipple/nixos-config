@@ -18,6 +18,12 @@
 
   networking.hostName = "brh-dale";
 
+  # Pi-Hole
+  networking.nameservers = [ "192.168.1.169" ];
+  environment.etc = {
+    "resolv.conf".text = "nameserver 192.168.1.169\n";
+  };
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
