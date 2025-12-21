@@ -67,7 +67,7 @@
           access = "proxy";
           url = "http://localhost:8086";
           jsonData = {
-            database = "brh-finance";
+            dbName = "brh-finance";
             httpMode = "GET";
           };
         }
