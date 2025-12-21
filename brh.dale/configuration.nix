@@ -60,16 +60,24 @@
     settings = {};
     provision = {
       enable = true;
-      #datasources = [
-      #  {
-      #    name = "brh-finance";
-      #    type = "influxdb";
-      #    access = "direct";
-      #    url = http://localhost:8086;
-      #    database = "brh-finance";
-      #  }
-      #];
-      dashboards.path = ../grafana/provisioning/dashboards;
+      datasources.settings.datasources = [
+        {
+          name = "brh-finance";
+          type = "influxdb";
+          access = "proxy";
+          url = "http://localhost:8086";
+          jsonData = {
+            database = "brh-finance";
+            httpMode = "GET";
+          };
+        }
+      ];
+      dashboards.settings.providers = [
+        {
+          name = "default";
+          options.path = ../grafana/provisioning/dashboards;
+        }
+      ];
     };
   };
 
