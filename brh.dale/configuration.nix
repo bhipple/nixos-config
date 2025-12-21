@@ -55,29 +55,27 @@
     acceleration = "cuda";
   };
 
-  #services.grafana = {
-  #  enable = true;
-  #  settings = {};
-  #  provision = {
-  #    enable = true;
-  #    #datasources = [
-  #    #  {
-  #    #    name = "brh-finance";
-  #    #    type = "influxdb";
-  #    #    access = "direct";
-  #    #    url = http://localhost:8086;
-  #    #    database = "brh-finance";
-  #    #  }
-  #    #];
-  #    dashboards.path = ../grafana/provisioning/dashboards;
-  #  };
-  #  declarativePlugins = [ pkgs.grafanaPlugins.yesoreyeram-infinity-datasource ];
-  #};
+  services.grafana = {
+    enable = true;
+    settings = {};
+    provision = {
+      enable = true;
+      #datasources = [
+      #  {
+      #    name = "brh-finance";
+      #    type = "influxdb";
+      #    access = "direct";
+      #    url = http://localhost:8086;
+      #    database = "brh-finance";
+      #  }
+      #];
+      dashboards.path = ../grafana/provisioning/dashboards;
+    };
+  };
 
-  # Replace this with csv; it's too complicated
   services.influxdb.enable = true;
 
-  system.stateVersion = "25.05";
+  system.stateVersion = "25.11";
 
   # See options with `man mount`
   fileSystems."/".options = [
