@@ -16,6 +16,8 @@
     ../vpn/vpn.nix
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   networking.hostName = "brh-dale";
 
   # Pi-Hole
@@ -43,7 +45,6 @@
     };
   };
 
-  nixpkgs.config.allowUnfree = true;
   services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware.nvidia.open = true;
