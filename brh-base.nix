@@ -11,12 +11,12 @@
   networking.firewall =
     let
       ssh = [ 22 ];
-      wg = [ 51820 ];
+      war-of-the-ring = [ 4747 ];
     in
     {
       enable = true;
-      allowedTCPPorts = ssh ++ wg;
-      allowedUDPPorts = wg;
+      allowedTCPPorts = ssh ++ war-of-the-ring;
+      allowedUDPPorts = [];
     };
 
   networking.networkmanager.enable = true;
