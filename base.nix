@@ -11,8 +11,10 @@
     brave
     chromium
     dmenu
+    ffmpeg
     git
     gnupg
+    gphoto2
     pass
     pinentry-curses
     python3
@@ -65,7 +67,7 @@
   users.users.bhipple = {
     isNormalUser = true;
     description = "Benjamin Hipple";
-    extraGroups = [ "adbusers" "bhipple" "docker" "networkmanager" "plugdev" "users" "wheel" ];
+    extraGroups = [ "adbusers" "bhipple" "camera" "docker" "networkmanager" "plugdev" "users" "wheel" ];
     openssh.authorizedKeys.keys = [
       # brh-key
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINCyn5P9LSm/yfox7qrbWthnbAI2yQHoXotI/6iNE1XY"

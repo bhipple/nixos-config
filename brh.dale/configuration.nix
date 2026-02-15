@@ -18,6 +18,10 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  # Camera as webcam support
+  programs.gphoto2.enable = true;
+  boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+
   networking.hostName = "brh-dale";
 
   # Pi-Hole
