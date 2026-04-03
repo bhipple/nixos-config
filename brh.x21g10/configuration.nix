@@ -17,14 +17,14 @@ in
     ../base.nix
     ../brh-base.nix
     ../cron.nix
-    #../email.nix
-    #../hosts.nix
+    ../email.nix
+    ../hosts.nix
     ../sudo.nix
     ../udev.nix
     ../xserver.nix
 
     # VPN
-    #../vpn/vpn.nix
+    ../vpn/vpn.nix
     ];
 
   # Bootloader.
