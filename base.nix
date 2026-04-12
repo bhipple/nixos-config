@@ -15,6 +15,7 @@
     git
     gnupg
     gphoto2
+    libimobiledevice  # For iPhone USB tethering
     pass
     pinentry-curses
     python3

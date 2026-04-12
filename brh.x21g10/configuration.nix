@@ -47,6 +47,9 @@ in
   # Enable networking
   networking.networkmanager.enable = true;
 
+  # Enable iPhone USB tethering
+  services.usbmuxd.enable = true;
+
   # Set your time zone.
   time.timeZone = "America/New_York";
 
@@ -111,13 +114,6 @@ in
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
-  environment.systemPackages = with pkgs; [
-  #  vim # Do not forget to add an editor to edit configuration.nix! The Nano editor is also installed by default.
-  #  wget
-  ];
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
