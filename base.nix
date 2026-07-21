@@ -8,7 +8,9 @@
 
   # System profile packages
   environment.systemPackages = with pkgs; [
-    brave
+    # HiDPI: pin Chromium's device scale to an integer so the GTK file
+    # picker sizes correctly (fractional auto-scale overflowed the screen).
+    (brave.override { commandLineArgs = "--force-device-scale-factor=2"; })
     chromium
     dmenu
     ffmpeg
