@@ -26,9 +26,10 @@
 
   # Pi-Hole
   networking.nameservers = [ "192.168.1.169" ];
-  environment.etc = {
-    "resolv.conf".text = "nameserver 192.168.1.169\n";
-  };
+  # FIXME
+  #environment.etc = {
+  #  "resolv.conf".text = "nameserver 192.168.1.169\n";
+  #};
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -54,37 +55,6 @@
   hardware.nvidia.open = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.latest;
   hardware.nvidia.modesetting.enable = true;
-
-  services.ollama = {
-    enable = false;
-    acceleration = "cuda";
-  };
-
-  services.grafana = {
-    enable = true;
-    settings = {};
-    provision = {
-      enable = true;
-      datasources.settings.datasources = [
-        {
-          name = "brh-finance";
-          type = "influxdb";
-          access = "proxy";
-          url = "http://localhost:8086";
-          jsonData = {
-            dbName = "brh-finance";
-            httpMode = "GET";
-          };
-        }
-      ];
-      dashboards.settings.providers = [
-        {
-          name = "default";
-          options.path = ../grafana/provisioning/dashboards;
-        }
-      ];
-    };
-  };
 
   services.influxdb.enable = true;
 

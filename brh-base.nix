@@ -20,7 +20,6 @@
     };
 
   networking.networkmanager.enable = true;
-  networking.wireless.enable = false;
 
   programs.browserpass.enable = true;
   programs.dconf.enable = true;
