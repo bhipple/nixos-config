@@ -26,7 +26,7 @@
     vim
     wget
     xautolock
-    xorg.xmessage
+    xmessage
     zellij
     zsh
   ];
