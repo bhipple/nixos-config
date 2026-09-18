@@ -21,6 +21,7 @@ in
     ../hosts.nix
     ../sudo.nix
     ../udev.nix
+    ../usbmuxd.nix
     ../xserver.nix
 
     # VPN
@@ -46,9 +47,6 @@ in
 
   # Enable networking
   networking.networkmanager.enable = true;
-
-  # Enable iPhone USB tethering
-  services.usbmuxd.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/New_York";
