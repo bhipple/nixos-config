@@ -4,6 +4,7 @@ let
   services = [
     "bluetooth.service"
     "display-manager.service"
+    "speedify.service"
     "tailscaled.service"
     "wg-quick-protonvpn.service"
   ];
