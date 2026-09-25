@@ -25,7 +25,6 @@ in
     ../xserver.nix
 
     # VPN
-    ../vpn/speedify.nix
     ../vpn/vpn.nix
     ];
 

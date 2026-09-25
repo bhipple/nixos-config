@@ -1,6 +1,11 @@
 # Base defaults for my personal machines
 { pkgs, ... }:
 {
+
+  imports = [
+    ./vpn/speedify.nix
+  ];
+
   hardware.graphics.enable = true;
 
   location = {
