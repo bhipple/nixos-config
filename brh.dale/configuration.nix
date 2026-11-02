@@ -56,6 +56,17 @@
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.latest;
   hardware.nvidia.modesetting.enable = true;
 
+  services.ollama = {
+    enable = true;
+    package = pkgs.ollama-cuda;
+    # Keep in sync with contextWindow in ~/dotfiles/pi/agent/models.json
+    environmentVariables.OLLAMA_CONTEXT_LENGTH = "32768";
+    loadModels = [
+      "qwen3.6:27b"
+      "qwen3.6:35b-a3b"
+    ];
+  };
+
   services.influxdb.enable = true;
 
   system.stateVersion = "25.11";
