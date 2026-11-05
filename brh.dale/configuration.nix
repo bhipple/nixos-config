@@ -60,7 +60,13 @@
     enable = true;
     package = pkgs.ollama-cuda;
     # Keep in sync with contextWindow in ~/dotfiles/pi/agent/models.json
-    environmentVariables.OLLAMA_CONTEXT_LENGTH = "32768";
+    environmentVariables = {
+      OLLAMA_CONTEXT_LENGTH = "65536";
+      # Flash attention + 8-bit KV cache roughly halve context memory,
+      # so 64K still fits on the 4090 alongside a 27B Q4 model.
+      OLLAMA_FLASH_ATTENTION = "1";
+      OLLAMA_KV_CACHE_TYPE = "q8_0";
+    };
     loadModels = [
       "qwen3.6:27b"
       "qwen3.6:35b-a3b"
