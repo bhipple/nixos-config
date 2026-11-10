@@ -8,6 +8,7 @@
 
   # System profile packages
   environment.systemPackages = with pkgs; [
+    chromium
     dmenu
     ffmpeg
     git
