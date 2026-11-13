@@ -24,6 +24,17 @@
 
   networking.hostName = "brh-dale";
 
+  # The RTL8821CE (rtw88) sleeps between packets with power save on, the likely
+  # cause of 100-200ms latency spikes to the router that stalled RDP. This is a
+  # desktop on wall power, so keep the radio awake. NetworkManager covers
+  # 802.11 power save; the module options cover rtw88's own deep sleep and
+  # PCIe ASPM, which cause the same stalls.
+  networking.networkmanager.wifi.powersave = false;
+  boot.extraModprobeConfig = ''
+    options rtw88_core disable_lps_deep=y
+    options rtw88_pci disable_aspm=y
+  '';
+
   # Pi-Hole
   networking.nameservers = [ "192.168.1.169" ];
   # FIXME
